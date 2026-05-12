@@ -1,0 +1,134 @@
+/* =============================================================================
+   CARD
+============================================================================= */
+
+.card {
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+/* ---- Variants ---- */
+
+.card--elevated {
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.card--outlined {
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+
+.card--flat {
+  border-color: transparent;
+  background-color: var(--bg-subtle);
+  box-shadow: none;
+}
+
+/* ---- Interactive card ---- */
+
+.card--interactive {
+  cursor: pointer;
+  transition:
+    box-shadow      var(--transition-base),
+    border-color    var(--transition-base),
+    transform       var(--transition-base);
+}
+
+.card--interactive:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.card--interactive:active {
+  transform: translateY(1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ---- Sections ---- */
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.card__image--square {
+  aspect-ratio: 1;
+}
+
+.card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-5) 0;
+}
+
+.card__body {
+  padding: var(--space-4) var(--space-5);
+}
+
+.card__header + .card__body {
+  padding-top: var(--space-3);
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-default);
+  background-color: var(--bg-subtle);
+}
+
+.card__footer--end {
+  justify-content: flex-end;
+}
+
+.card__footer--between {
+  justify-content: space-between;
+}
+
+/* ---- Card title / description ---- */
+
+.card__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.card__description {
+  margin-top: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* ---- Horizontal card ---- */
+
+.card--horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.card--horizontal .card__image {
+  width: 8rem;
+  aspect-ratio: auto;
+  flex-shrink: 0;
+}
+
+/* ---- Compact card ---- */
+
+.card--compact .card__body    { padding: var(--space-3) var(--space-4); }
+.card--compact .card__header  { padding: var(--space-3) var(--space-4) 0; }
+.card--compact .card__footer  { padding: var(--space-3) var(--space-4); }

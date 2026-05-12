@@ -1,0 +1,202 @@
+/* =============================================================================
+   INPUT
+   Types: text, password, search, textarea
+   States: default, focus, error, success, disabled
+============================================================================= */
+
+/* ---- Field wrapper ---- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+/* ---- Label ---- */
+
+.field__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.field__label--required::after {
+  content: ' *';
+  color: var(--status-error-icon);
+}
+
+/* ---- Input wrapper (for icons/addons) ---- */
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ---- Base input ---- */
+
+.input {
+  width: 100%;
+  height: 2.5rem;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+  background-color: var(--surface-base);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow   var(--transition-fast),
+    background-color var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input:hover:not(:disabled):not(.input--error):not(.input--success) {
+  border-color: var(--border-stronger);
+}
+
+.input:focus-visible {
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+/* ---- Textarea ---- */
+
+.input--textarea {
+  height: auto;
+  min-height: 6rem;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  resize: vertical;
+  line-height: var(--line-height-normal);
+}
+
+/* ---- Search ---- */
+
+.input--search {
+  padding-left: var(--space-9, 2.25rem);
+}
+
+.input-wrap--search .input-icon--left {
+  pointer-events: none;
+  color: var(--text-tertiary);
+}
+
+/* ---- With icons ---- */
+
+.input-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--text-secondary);
+}
+
+.input-icon--left  { left: 0; }
+.input-icon--right { right: 0; }
+
+.input-wrap--icon-left  .input { padding-left:  var(--space-9, 2.25rem); }
+.input-wrap--icon-right .input { padding-right: var(--space-9, 2.25rem); }
+
+.input-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---- States ---- */
+
+.input--error {
+  border-color: var(--status-error-icon);
+}
+
+.input--error:focus-visible {
+  border-color: var(--status-error-icon);
+  box-shadow: var(--shadow-focus-error);
+}
+
+.input--success {
+  border-color: var(--status-success-icon);
+}
+
+.input--success:focus-visible {
+  border-color: var(--status-success-icon);
+  box-shadow: var(--shadow-focus-success);
+}
+
+.input:disabled {
+  background-color: var(--bg-muted);
+  color: var(--text-disabled);
+  border-color: var(--border-default);
+  cursor: not-allowed;
+}
+
+/* ---- Hint / Error / Success messages ---- */
+
+.field__hint {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.field__message {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}
+
+.field__message--error   { color: var(--status-error-text); }
+.field__message--success { color: var(--status-success-text); }
+
+.field__message svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* ---- Input addon (prefix/suffix text) ---- */
+
+.input-addon {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  background-color: var(--bg-muted);
+  border: 1px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group .input-addon:first-child {
+  border-right: none;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.input-group .input-addon:last-child {
+  border-left: none;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.input-group .input {
+  border-radius: 0;
+  flex: 1;
+}
+
+.input-group .input-addon:first-child + .input {
+  border-left: none;
+}

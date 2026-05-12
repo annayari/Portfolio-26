@@ -1,0 +1,141 @@
+/* =============================================================================
+   ALERT
+============================================================================= */
+
+.alert {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid transparent;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+/* ---- Variants ---- */
+
+.alert--success {
+  background-color: var(--status-success-bg);
+  color: var(--status-success-text);
+  border-color: var(--status-success-border);
+}
+
+.alert--warning {
+  background-color: var(--status-warning-bg);
+  color: var(--status-warning-text);
+  border-color: var(--status-warning-border);
+}
+
+.alert--error {
+  background-color: var(--status-error-bg);
+  color: var(--status-error-text);
+  border-color: var(--status-error-border);
+}
+
+.alert--info {
+  background-color: var(--status-info-bg);
+  color: var(--status-info-text);
+  border-color: var(--status-info-border);
+}
+
+/* ---- Icon ---- */
+
+.alert__icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.0625rem; /* 1px optical offset */
+}
+
+/* ---- Content ---- */
+
+.alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert__title {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.alert__body {
+  opacity: 0.9;
+}
+
+/* ---- Dismiss button ---- */
+
+.alert__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: currentColor;
+  opacity: 0.6;
+  margin-top: -0.125rem;
+  transition: opacity var(--transition-fast), background-color var(--transition-fast);
+}
+
+.alert__close:hover {
+  opacity: 1;
+  background-color: rgb(0 0 0 / 0.08);
+}
+
+.alert__close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+  opacity: 1;
+}
+
+.alert__close svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---- Actions ---- */
+
+.alert__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* ---- Solid variants ---- */
+
+.alert--solid-success {
+  background-color: var(--color-success-600);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.alert--solid-warning {
+  background-color: var(--color-warning-600);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.alert--solid-error {
+  background-color: var(--color-error-600);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.alert--solid-info {
+  background-color: var(--color-primary-600);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+/* ---- Banner variant (full-width, no radius) ---- */
+
+.alert--banner {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}

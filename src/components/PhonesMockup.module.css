@@ -1,0 +1,79 @@
+.stage {
+  position: relative;
+  width: 500px;
+  height: 580px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Ambient glow */
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.1) 0%, transparent 68%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.8s ease;
+}
+.stage:hover .glow {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.18) 0%, transparent 68%);
+}
+
+/* Phone wrapper */
+.phone {
+  position: absolute;
+  will-change: transform;
+}
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* LEFT — Design Studio paywall  (974×1515 → 290px wide → h≈451px) */
+.phoneL {
+  width: 290px;
+  left: -30px;
+  top: 76px;
+  z-index: 1;
+  transform: rotate(-12deg);
+  transition:
+    transform 0.52s cubic-bezier(0.4, 0, 0.2, 1),
+    filter    0.52s ease;
+  animation: enterL 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* RIGHT — Change floor  (1133×2216 → 248px wide → h≈485px)
+   bottom-align: left-bottom = 76+451 = 527px → right top = 527-485 = 42px */
+.phoneR {
+  width: 248px;
+  left: 136px;
+  top: 42px;
+  z-index: 2;
+  transform: rotate(2deg);
+  transform-origin: bottom left;
+  transition: transform 0.52s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: enterR 0.75s 0.1s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* Hover — rotation only, no positional shift */
+.stage:hover .phoneR {
+  transform: rotate(8deg) scale(1.25);
+}
+
+/* Entrance animations */
+@keyframes enterL {
+  from { opacity: 0; transform: rotate(-12deg) translate(-30px, 18px); }
+  to   { opacity: 1; transform: rotate(-12deg); }
+}
+
+@keyframes enterR {
+  from { opacity: 0; transform: rotate(2deg) translateY(-30px); }
+  to   { opacity: 1; transform: rotate(2deg); }
+}

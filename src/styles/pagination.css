@@ -1,0 +1,134 @@
+/* =============================================================================
+   PAGINATION
+============================================================================= */
+
+.pagination {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Page button (shared base) ---- */
+
+.page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition:
+    background-color  var(--transition-fast),
+    border-color      var(--transition-fast),
+    color             var(--transition-fast);
+}
+
+.page-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  border-color: var(--border-default);
+}
+
+.page-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ---- Active page ---- */
+
+.page-btn--active {
+  background-color: var(--interactive-bg);
+  color: var(--interactive-text);
+  border-color: var(--interactive-bg);
+  font-weight: var(--font-weight-semibold);
+  pointer-events: none;
+}
+
+/* ---- Disabled (prev/next at boundaries) ---- */
+
+.page-btn--disabled,
+.page-btn:disabled {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---- Ellipsis ---- */
+
+.page-btn--ellipsis {
+  cursor: default;
+  pointer-events: none;
+  color: var(--text-tertiary);
+  letter-spacing: 0.05em;
+}
+
+/* ---- Prev / Next arrow buttons ---- */
+
+.page-btn--nav {
+  gap: var(--space-1);
+}
+
+.page-btn--nav svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* ---- Sizes ---- */
+
+.pagination--sm .page-btn {
+  min-width: 1.75rem;
+  height: 1.75rem;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-md);
+}
+
+.pagination--lg .page-btn {
+  min-width: 2.75rem;
+  height: 2.75rem;
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-xl);
+}
+
+/* ---- Outlined variant ---- */
+
+.pagination--outlined .page-btn {
+  border-color: var(--border-default);
+}
+
+.pagination--outlined .page-btn:hover {
+  border-color: var(--border-strong);
+}
+
+/* ---- Compact (no gap, joined borders) ---- */
+
+.pagination--compact {
+  gap: 0;
+}
+
+.pagination--compact .page-btn {
+  border-radius: 0;
+  border-color: var(--border-default);
+  border-right-width: 0;
+}
+
+.pagination--compact li:first-child .page-btn {
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.pagination--compact li:last-child .page-btn {
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  border-right-width: 1px;
+}

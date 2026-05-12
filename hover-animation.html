@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0ede8;
+    }
+
+    .image-container {
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .image-container img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .img-ref {
+      position: relative;
+      z-index: 1;
+      transition: opacity 300ms ease-out;
+    }
+
+    .img-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 300ms ease-out;
+    }
+
+    .image-container:hover .img-ref {
+      opacity: 0;
+    }
+
+    .image-container:hover .img-hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img class="img-ref" src="картинки/ref.jpg" alt="ref">
+    <img class="img-hover" src="картинки/hover.jpg" alt="hover">
+  </div>
+</body>
+</html>

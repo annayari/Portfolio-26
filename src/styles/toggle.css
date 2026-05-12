@@ -1,0 +1,99 @@
+/* =============================================================================
+   TOGGLE (Switch)
+============================================================================= */
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-label--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Hide native checkbox */
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Track */
+.toggle-track {
+  position: relative;
+  width: 2.75rem;  /* 44px */
+  height: 1.5rem;  /* 24px */
+  background-color: var(--bg-emphasis);
+  border-radius: var(--radius-full);
+  transition: background-color var(--transition-base);
+  flex-shrink: 0;
+}
+
+/* Thumb */
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 0.1875rem;    /* 3px */
+  left: 0.1875rem;
+  width: 1.125rem;   /* 18px */
+  height: 1.125rem;
+  background-color: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base);
+}
+
+/* Checked */
+.toggle-input:checked + .toggle-track {
+  background-color: var(--interactive-bg);
+}
+
+.toggle-input:checked + .toggle-track::after {
+  transform: translateX(1.25rem); /* 20px */
+}
+
+/* Focus */
+.toggle-input:focus-visible + .toggle-track {
+  box-shadow: var(--shadow-focus);
+}
+
+/* Hover */
+.toggle-label:hover:not(.toggle-label--disabled) .toggle-track {
+  opacity: 0.9;
+}
+
+/* Text */
+.toggle-text {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.toggle-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle-description {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Sizes */
+.toggle-label--sm .toggle-track {
+  width: 2.25rem;
+  height: 1.25rem;
+}
+
+.toggle-label--sm .toggle-track::after {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.toggle-label--sm .toggle-input:checked + .toggle-track::after {
+  transform: translateX(1rem);
+}

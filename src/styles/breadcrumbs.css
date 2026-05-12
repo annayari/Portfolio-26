@@ -1,0 +1,99 @@
+/* =============================================================================
+   BREADCRUMBS
+============================================================================= */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Item ---- */
+
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* ---- Link ---- */
+
+.breadcrumbs__link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-0-5) var(--space-1);
+  margin: calc(var(--space-0-5) * -1) calc(var(--space-1) * -1);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.breadcrumbs__link:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-subtle);
+}
+
+.breadcrumbs__link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  color: var(--text-primary);
+}
+
+/* ---- Current (last item) ---- */
+
+.breadcrumbs__current {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ---- Separator ---- */
+
+.breadcrumbs__sep {
+  color: var(--text-tertiary);
+  user-select: none;
+  line-height: 1;
+  font-size: 0.75em;
+}
+
+/* ---- Collapsed (ellipsis) ---- */
+
+.breadcrumbs__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  transition: background-color var(--transition-fast);
+}
+
+.breadcrumbs__ellipsis:hover {
+  background-color: var(--bg-subtle);
+}
+
+/* ---- Sizes ---- */
+
+.breadcrumbs--sm {
+  font-size: var(--font-size-xs);
+}
+
+.breadcrumbs--lg {
+  font-size: var(--font-size-base);
+}
+
+/* ---- With icons ---- */
+
+.breadcrumbs__icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
