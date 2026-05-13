@@ -35,23 +35,26 @@ export function CaseCursor() {
       iconEye.style.display    = type === 'view'   ? 'flex' : 'none';
       iconWip.style.display    = type === 'wip'    ? 'flex' : 'none';
       iconCourse.style.display = type === 'course' ? 'flex' : 'none';
+      wrap.style.backgroundColor = type === 'wip' ? '#FFFFFF' : '#D8D2FF';
     };
 
     const setZone = (nowInZone: boolean, isWip: boolean, isCourse: boolean) => {
       if (nowInZone !== inZone.current) {
         inZone.current = nowInZone;
         if (nowInZone) {
+          wrap.style.backgroundColor = isWip ? '#FFFFFF' : '#D8D2FF';
           wrap.style.maxWidth     = '230px';
           wrap.style.height       = '38px';
           wrap.style.padding      = '10px 20px 10px 14px';
           content.style.opacity   = '1';
           content.style.transform = 'scale(1)';
         } else {
-          wrap.style.maxWidth     = '18px';
-          wrap.style.height       = '18px';
-          wrap.style.padding      = '0';
-          content.style.opacity   = '0';
-          content.style.transform = 'scale(0.7)';
+          wrap.style.backgroundColor = '#D8D2FF';
+          wrap.style.maxWidth        = '18px';
+          wrap.style.height          = '18px';
+          wrap.style.padding         = '0';
+          content.style.opacity      = '0';
+          content.style.transform    = 'scale(0.7)';
         }
       }
       if (nowInZone) updateLabel(isWip ? 'wip' : isCourse ? 'course' : 'view');
@@ -92,7 +95,7 @@ export function CaseCursor() {
         position: 'fixed', top: 0, left: 0, zIndex: 9999,
         pointerEvents: 'none', willChange: 'transform', opacity: 0,
         maxWidth: 18, height: 18, borderRadius: 9999, overflow: 'hidden',
-        backgroundColor: '#F3F4A9',
+        backgroundColor: '#D8D2FF',
         display: 'flex', alignItems: 'center', padding: 0,
         transition: 'max-width 0.4s cubic-bezier(0.34,1.2,0.64,1), height 0.4s cubic-bezier(0.34,1.2,0.64,1), padding 0.4s cubic-bezier(0.34,1.2,0.64,1), opacity 0.2s ease',
       }}

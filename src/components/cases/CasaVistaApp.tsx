@@ -21,7 +21,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
       fontFamily: FD, fontSize: 14, fontWeight: 400,
-      color: '#6B6B7A', margin: '0 0 8px',
+      color: '#6B6B7A', margin: '0 0 2px',
     }}>
       {children}
     </p>
@@ -330,7 +330,7 @@ export function CasaVistaApp() {
                   <Placeholder aspect="4/3" label={`📷 ${it.tag}`} />
                 </div>
                 <div>
-                  <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>
+                  <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: '0 0 10px' }}>{it.body}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: 0 }}>{it.result}</p>
@@ -385,7 +385,7 @@ export function CasaVistaApp() {
                   <Placeholder aspect="4/3" label={`📷 ${it.tag}`} />
                 </div>
                 <div>
-                  <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>
+                  <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: '0 0 10px' }}>{it.body}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: 0 }}>{it.result}</p>
@@ -439,7 +439,7 @@ export function CasaVistaApp() {
                   <Placeholder aspect="4/3" label={`📷 ${it.tag}`} />
                 </div>
                 <div>
-                  <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>
+                  <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: '0 0 10px' }}>{it.body}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: 0 }}>{it.result}</p>

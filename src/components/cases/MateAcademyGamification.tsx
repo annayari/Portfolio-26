@@ -30,7 +30,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
       fontFamily: FD, fontSize: 14, fontWeight: 400,
-      color: '#6B6B7A', margin: '0 0 8px',
+      color: '#6B6B7A', margin: '0 0 2px',
     }}>
       {children}
     </p>
@@ -288,60 +288,6 @@ export function MateAcademyGamification() {
       </section>
 
 
-      {/* ── DISCOVERY ────────────────────────────────────────────────────── */}
-      <section id="discovery" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <H2>Discovery: identifying the levers</H2>
-
-        {/* stats line */}
-        <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.5, margin: '0 0 20px' }}>
-          <strong style={{ fontWeight: 500, color: INK }}>6</strong> in-depth interviews ·{' '}
-          <strong style={{ fontWeight: 500, color: INK }}>50+</strong> survey responses ·{' '}
-          <strong style={{ fontWeight: 500, color: INK }}>4</strong> competitive analyses (Duolingo, Khan Academy, Codecademy, gaming platforms)
-        </p>
-
-        {/* insights + quotes — 2 columns per row */}
-        <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
-          {[
-            {
-              n: '1',
-              bold: 'Students want pace comparison, not competition',
-              quote: <>&ldquo;No one to compare with — feels like <strong>I&apos;m the only student here</strong>.&rdquo;</>,
-              who: "Student, week 8, Frontend",
-            },
-            {
-              n: '2',
-              bold: 'Micro-wins outperform milestones',
-              quote: <>&ldquo;One task done, the day feels worth it. <strong>Small wins keep me going</strong>.&rdquo;</>,
-              who: "Student, week 5, Python",
-            },
-            {
-              n: '3',
-              bold: 'Weekend drop-off was the biggest retention leak',
-              quote: <>&ldquo;Skip one weekend and <strong>it&apos;s suddenly been two weeks</strong>.&rdquo;</>,
-              who: "Student, week 12, Fullstack",
-            },
-          ].map((item, i) => (
-            <div key={i} className="r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '35% 65%', gap: 32, alignItems: 'start' }}>
-              <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, lineHeight: 1.4, margin: 0, display: 'flex', gap: 8, alignItems: 'baseline' }}>
-                <span style={{ color: '#6B6B7A', fontWeight: 500, flexShrink: 0 }}>{item.n}/</span>
-                {item.bold}
-              </p>
-              <div className="hover-note" style={{ backgroundColor: '#F7F7F9', padding: '14px 16px', borderLeft: `2px solid ${BORDER}`, display: 'flex', flexDirection: 'column' as const, justifyContent: 'space-between' }}>
-                <p style={{ fontFamily: FD, fontSize: 14, color: BODY, lineHeight: 1.6, margin: '0 0 6px' }}>
-                  {item.quote}
-                </p>
-                <p style={{ fontFamily: FD, fontSize: 13, color: '#6B6B7A', margin: 0 }}>— {item.who}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ borderLeft: `2px solid ${BORDER}`, paddingLeft: 16, marginTop: 24 }}>
-          <p style={{ fontFamily: FD, fontSize: 15, color: '#9B6F3A', lineHeight: 1.6, margin: 0 }}>
-            Partnered with PM to develop the MVP scope and feature prioritization framework
-          </p>
-        </div>
-      </section>
 
       {/* ── STREAKS ──────────────────────────────────────────────────────── */}
       <section id="streaks" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
@@ -376,7 +322,7 @@ export function MateAcademyGamification() {
                   }
                 </div>
                 <div>
-                  {(it as any).tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{(it as any).tag}</p>}
+                  {(it as any).tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{(it as any).tag}</p>}
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>
                 </div>
@@ -434,7 +380,7 @@ export function MateAcademyGamification() {
 
         {/* design decisions */}
         <div style={{ marginBottom: 36, marginTop: 40 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Design decisions</p>
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
           <div>
             <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
               Placement determines whether a feature helps or competes
@@ -472,7 +418,7 @@ export function MateAcademyGamification() {
                 {it.v === 'V1' ? (
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
                     <div>
-                      <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>Iteration 1</p>
+                      <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Iteration 1</p>
                       <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: 0 }}>{it.title}</p>
                     </div>
                     <div>
@@ -484,7 +430,7 @@ export function MateAcademyGamification() {
                 ) : (
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
                     <div>
-                      <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.v === 'V2' ? 'Iteration 2' : 'Iteration 3'}</p>
+                      <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.v === 'V2' ? 'Iteration 2' : 'Iteration 3'}</p>
                       <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: 0 }}>{it.title}</p>
                     </div>
                     {it.v === 'V2' ? (
@@ -635,7 +581,7 @@ export function MateAcademyGamification() {
             {/* V1 — vertical: tag + title + image */}
             <div className="stagger-item" style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
               <div>
-                <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>Design decisions</p>
+                <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
                 <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 8px' }}>Activation</p>
                 <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>&ldquo;Without deadlines&rdquo; stays selected by default to keep the self-paced promise. &ldquo;Soft deadlines&rdquo; is shown as an option, with clear benefits, but without pushing students toward it.</p>
               </div>
@@ -647,7 +593,7 @@ export function MateAcademyGamification() {
             {/* V3 — vertical: tag + title + image */}
             <div className="stagger-item" style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
               <div>
-                <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>Design decisions</p>
+                <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
                 <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 8px' }}>Selection</p>
                 <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>A stepped slider helps students choose a realistic course duration by showing the required weekly effort in real time. This makes the deadline feel self-owned, not assigned.</p>
               </div>
@@ -659,7 +605,7 @@ export function MateAcademyGamification() {
             {/* V4 — vertical: tag + title + image */}
             <div className="stagger-item" style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
               <div>
-                <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>Iterations after user testing</p>
+                <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Iterations after user testing</p>
                 <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 8px' }}>Module breakdowns & pace tooltip</p>
                 <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>After testing with 6 users, we replaced one distant course deadline with module-level countdowns and added a visible pace status, so students can understand what needs attention at a glance.</p>
               </div>

@@ -21,7 +21,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
       fontFamily: FD, fontSize: 14, fontWeight: 400,
-      color: '#6B6B7A', margin: '0 0 8px',
+      color: '#6B6B7A', margin: '0 0 2px',
     }}>
       {children}
     </p>
@@ -310,7 +310,7 @@ export function MateAcademyMentor() {
 
         {/* design decisions */}
         <div style={{ marginBottom: 36, marginTop: 40 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Design decisions</p>
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
           <div>
             <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
               Behavioral nudge: show the average, change the behavior
@@ -346,7 +346,7 @@ export function MateAcademyMentor() {
                   <Placeholder aspect="4/3" label={`📷 Review plugin ${it.v}`} />
                 </div>
                 <div>
-                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>}
+                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>}
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>
                 </div>
@@ -391,7 +391,7 @@ export function MateAcademyMentor() {
 
         {/* design decisions */}
         <div style={{ marginBottom: 36, marginTop: 40 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Design decisions</p>
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
           <div>
             <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
               5 roles, one system — IA was the hardest challenge
@@ -424,7 +424,7 @@ export function MateAcademyMentor() {
                   <Placeholder aspect="4/3" label={`📷 Time tracker ${it.v}`} />
                 </div>
                 <div>
-                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>}
+                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>}
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>
                 </div>
@@ -488,7 +488,7 @@ export function MateAcademyMentor() {
                   <Placeholder aspect="4/3" label={`📷 Dashboard ${it.v}`} />
                 </div>
                 <div>
-                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>}
+                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>}
                   <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                   <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>
                 </div>

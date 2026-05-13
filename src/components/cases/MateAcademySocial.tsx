@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Mic } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -21,7 +21,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p style={{
       fontFamily: FD, fontSize: 14, fontWeight: 400,
-      color: '#6B6B7A', margin: '0 0 8px',
+      color: '#6B6B7A', margin: '0 0 2px',
     }}>
       {children}
     </p>
@@ -252,67 +252,70 @@ export function MateAcademySocial() {
       <section id="discovery" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
         <H2>Discovery: mapping the isolation</H2>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, margin: '20px 0 28px' }}>
-          {[
-            { n: '120', label: 'Survey respondents' },
-            { n: '8', label: 'In-depth interviews' },
-            { n: '6', label: 'Competitive platforms benchmarked' },
-            { n: '10', label: 'Usability tests' },
-          ].map(m => (
-            <div key={m.n} style={{ backgroundColor: '#F5F5F3', borderRadius: 10, padding: '14px 16px' }}>
-              <p style={{ fontFamily: FD, fontSize: 28, fontWeight: 500, color: INK, margin: '0 0 4px', lineHeight: 1, letterSpacing: '-0.01em' }}>{m.n}</p>
-              <p style={{ fontFamily: FD, fontSize: 13, color: '#6B6B7A', margin: 0, lineHeight: 1.4 }}>{m.label}</p>
+        {/* Row 1: Analytics audit + Survey */}
+        <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '20px 0 12px' }}>
+
+          {/* Analytics audit */}
+          <div style={{ backgroundColor: '#F9F9F9', border: `1px solid ${BORDER}`, borderRadius: 14, padding: '18px 20px' }}>
+            <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Analytics audit</p>
+            <div style={{ display: 'flex', gap: 32 }}>
+              <div>
+                <p style={{ fontFamily: FD, fontSize: 36, fontWeight: 500, color: INK, margin: '0 0 3px', lineHeight: 1, letterSpacing: '-0.02em' }}>3×</p>
+                <p style={{ fontFamily: FD, fontSize: 13, color: '#6B6B7A', margin: 0, lineHeight: 1.4 }}>faster churn with<br />no peer interaction</p>
+              </div>
+              <div>
+                <p style={{ fontFamily: FD, fontSize: 36, fontWeight: 500, color: INK, margin: '0 0 3px', lineHeight: 1, letterSpacing: '-0.02em' }}>&lt;5%</p>
+                <p style={{ fontFamily: FD, fontSize: 13, color: '#6B6B7A', margin: 0, lineHeight: 1.4 }}>chat adoption<br />despite chat existing</p>
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Survey */}
+          <div style={{ backgroundColor: '#F9F9F9', border: `1px solid ${BORDER}`, borderRadius: 14, padding: '18px 20px' }}>
+            <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Survey — 220 respondents</p>
+            <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 10 }}>
+              {[
+                { pct: '68%', label: 'felt alone while studying' },
+                { pct: '54%', label: 'wanted to see how peers solve tasks' },
+                { pct: '41%', label: 'would study more if they saw others active' },
+              ].map((s, i) => (
+                <div key={i} style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
+                  <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, margin: 0, lineHeight: 1, minWidth: 44 }}>{s.pct}</p>
+                  <p style={{ fontFamily: FD, fontSize: 13, color: BODY, margin: 0, lineHeight: 1.3 }}>{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 10, marginTop: 8 }}>
-          {[
-            {
-              n: '01',
-              bold: 'Students didn\'t lack motivation — they lacked social context',
-              quote: <>&ldquo;I have no idea if anyone else is stuck on this or <strong style={{ color: INK, fontWeight: 500 }}>if it&apos;s just me</strong>.&rdquo;</>,
-              who: "Student interview",
-            },
-            {
-              n: '02',
-              bold: '54% wanted to see how peers approach the same tasks',
-              quote: <>&ldquo;I finished a task and nothing happened — no one to compare with, <strong style={{ color: INK, fontWeight: 500 }}>no feedback, just silence</strong>.&rdquo;</>,
-              who: "Student interview",
-            },
-            {
-              n: '03',
-              bold: 'Real-time activity outperforms static history',
-              quote: <><strong style={{ color: INK, fontWeight: 500 }}>Platforms showing who&apos;s here now outperform those showing who was here before.</strong> Benchmarked across Codecademy, Coursera, LeetCode, GitHub, LinkedIn, Duolingo.</>,
-              who: "Competitive analysis, 6 platforms",
-            },
-          ].map((item, i) => (
-            <div key={i} style={{ border: `1px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', backgroundColor: '#FFFFFF' }}>
-              {item.n !== '03' && (
-                <div style={{ padding: '20px 24px 18px', display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
-                  <span style={{ fontFamily: FM, fontSize: 10, fontWeight: 500, color: '#A0A0A0', letterSpacing: '0.12em' }}>{item.n}</span>
-                  <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, lineHeight: 1.45, margin: 0 }}>
-                    {item.bold}
-                  </p>
-                </div>
-              )}
-              {item.n === '03' ? (
-                <div style={{ padding: '20px 24px' }}>
-                  <p style={{ fontFamily: FD, fontSize: 14, color: '#5A5A5A', lineHeight: 1.65, margin: '0 0 12px' }}>
-                    {item.quote}
-                  </p>
-                  <span style={{ fontFamily: FM, fontSize: 10, color: '#9A9A9A', letterSpacing: '0.1em', textTransform: 'uppercase' as const }}>Competitive analysis · 6 platforms</span>
-                </div>
-              ) : (
-                <div style={{ backgroundColor: '#F9F9F9', borderTop: `1px solid ${BORDER}`, padding: '14px 24px', display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
-                  <p style={{ fontFamily: FD, fontSize: 13, color: '#5A5A5A', lineHeight: 1.65, margin: 0, fontStyle: 'italic' as const }}>
-                    {item.quote}
-                  </p>
-                  <span style={{ fontFamily: FD, fontSize: 12, color: '#9A9A9A', margin: 0 }}>— {item.who}</span>
-                </div>
-              )}
-            </div>
-          ))}
+        {/* Row 2: Interview quotes */}
+        <div style={{ backgroundColor: '#F9F9F9', border: `1px solid ${BORDER}`, borderRadius: 14, padding: 20, marginBottom: 12 }}>
+          <div style={{ marginBottom: 14 }}>
+            <p style={{ fontFamily: FD, fontSize: 16, fontWeight: 600, color: INK, margin: '0 0 2px' }}>Interviews — 8 students</p>
+            <p style={{ fontFamily: FD, fontSize: 13, color: '#6B6B7A', margin: 0, lineHeight: 1.4 }}>Root cause: not a motivation problem — a <strong style={{ color: INK }}>visibility</strong> problem</p>
+          </div>
+          <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8 }}>
+            {([
+              <>"I have no idea if anyone else is <strong style={{ color: INK }}>stuck</strong> on this or if it&apos;s just me."</>,
+              <>"I finished a task and <strong style={{ color: INK }}>nothing happened</strong> — no one to compare with, no feedback, just <strong style={{ color: INK }}>silence</strong>."</>,
+              <>"I would message someone if I knew they <strong style={{ color: INK }}>just solved it</strong>. But I have <strong style={{ color: INK }}>no way to know</strong>."</>,
+              <>"Seeing a <strong style={{ color: INK }}>peer&apos;s solution</strong> — there were <strong style={{ color: INK }}>3 ways to solve it</strong>. More than the task taught me."</>,
+              <>"The leaderboard shows points but <strong style={{ color: INK }}>nothing about what people are actually doing</strong>."</>,
+              <>"I feel like I&apos;m <strong style={{ color: INK }}>learning alone</strong> even though there are <strong style={{ color: INK }}>thousands of us</strong>."</>,
+            ] as React.ReactNode[]).map((node, i) => (
+              <div key={i} style={{ backgroundColor: '#FFFFFF', borderRadius: 10, padding: '12px 14px' }}>
+                <p style={{ fontFamily: FD, fontSize: 13, color: '#4A4A5A', lineHeight: 1.6, margin: 0 }}>{node}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Row 3: Competitive analysis */}
+        <div style={{ backgroundColor: '#F9F9F9', border: `1px solid ${BORDER}`, borderRadius: 14, padding: '18px 20px' }}>
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 6px' }}>Competitive analysis — 6 platforms</p>
+          <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1.3 }}>Real-time activity drives engagement</p>
+          <p style={{ fontFamily: FD, fontSize: 13, color: BODY, margin: 0, lineHeight: 1.5 }}>Codecademy, LeetCode, GitHub, Duolingo, Coursera, LinkedIn Learning — who&apos;s here <em>now</em> matters, not who was here before.</p>
         </div>
 
       </section>
@@ -331,7 +334,7 @@ export function MateAcademySocial() {
         </div>
 
         <div style={{ marginBottom: 20, marginTop: 64 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Design decisions</p>
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
           <div>
             <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
               Contextual layer, not a destination
@@ -356,11 +359,11 @@ export function MateAcademySocial() {
             ].map((it) => (
               <div key={it.v} className="stagger-item" style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <div>
-                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>}
+                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>}
                   {it.title && <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 12px' }}>{it.title}</p>}
                   {it.body && (it.v === 'V1' ? (
-                    <div style={{ borderLeft: '3px solid #8BA3CC', backgroundColor: '#ECF0F9', padding: '8px 12px' }}>
-                      <p style={{ fontFamily: FD, fontSize: 15, color: '#3D5F8A', lineHeight: 1.6, margin: 0 }}>{it.body}</p>
+                    <div style={{ borderLeft: '3px solid #C4BDFF', backgroundColor: '#F3F1FF', padding: '8px 12px' }}>
+                      <p style={{ fontFamily: FD, fontSize: 15, color: '#4A3F8A', lineHeight: 1.6, margin: 0 }}>{it.body}</p>
                     </div>
                   ) : (
                     <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>
@@ -414,70 +417,67 @@ export function MateAcademySocial() {
         </Body>
 
         <div className="reveal img-hover-wrap" style={{ width: '100%', borderRadius: 12, overflow: 'hidden', marginBottom: 36 }}>
-          <Placeholder aspect="16/7" label="📷 Task page — peer solutions panel + Solving now avatars + DM buttons" />
+          <img src="/cases/mate-social-peer-solutions.jpg" alt="Task page — peer solutions panel" style={{ width: '100%', height: 'auto', display: 'block' }} />
         </div>
 
-        <div style={{ marginBottom: 36, marginTop: 40 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Design decisions</p>
-          <div>
-            <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
-              Completion gate: one constraint that preserved integrity
-            </h3>
-            <Body style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 12 }}>
-              Solutions locked until you submit. One constraint that prevented copying and made the reveal feel earned. 15% of students who see peer activity start a DM.
-            </Body>
-            <div style={{ borderLeft: '3px solid #C8922A', backgroundColor: '#FDF6EC', padding: '8px 12px', marginBottom: 24 }}>
-              <p style={{ fontFamily: FD, fontSize: 15, color: '#9B6F3A', lineHeight: 1.6, margin: 0 }}>Worked with design team to extend existing components for code display, peer indicators, and messaging interfaces while maintaining platform consistency</p>
-            </div>
-            <div className="img-hover-wrap" style={{ width: '100%', borderRadius: 12, overflow: 'hidden' }}>
-              <Placeholder aspect="16/7" label="📷 Locked vs unlocked state: Solve to see peer solutions → solutions visible" />
-            </div>
+        <div style={{ marginBottom: 56, marginTop: 56 }}>
+          <div className="stagger-group" style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
+            {[
+              {
+                v: 'V1', tag: 'Iterations', title: '3 clicks to zero',
+                body: 'Moved "Solving now" from a separate page to inline on the task. Tested with students, validated with data. Finish the task — see your peers instantly.',
+              },
+            ].map((it) => (
+              <div key={it.v} style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
+                <div>
+                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>{it.tag}</p>}
+                  {it.title && <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 6px' }}>{it.title}</p>}
+                  {it.body && <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>}
+                </div>
+                <div style={{ borderRadius: 12, overflow: 'hidden' }}>
+                  <img src="/cases/mate-social-peer-process.jpg" alt="Peer solutions process" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <div style={{ marginBottom: 36, marginTop: 40 }}>
-          <div className="stagger-group" style={{ display: 'flex', flexDirection: 'column' as const, gap: 56 }}>
-            {[
-              {
-                v: 'V1', tag: 'Process', title: 'Friction from 3 clicks to zero',
-                body: 'Analyzed 4 competitive solution-sharing platforms. Iterative testing with students — moved "Solving now" from a separate page to inline on the task. Friction dropped from 3 clicks to zero.',
-              },
-            ].map((it) => (
-              it.v === 'V3' ? (
-                <div key={it.v} className="stagger-item">
-                  {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>}
-                  {it.title && <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>}
-                  {it.body && <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>}
-                </div>
-              ) : (
-                <div key={it.v} className="stagger-item r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
-                  <div className="img-hover-wrap" style={{ borderRadius: 12, overflow: 'hidden' }}>
-                    <Placeholder aspect="4/3" label={`📷 Peer solutions — ${it.tag}`} />
-                  </div>
-                  <div>
-                    {it.tag && <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 8px' }}>{it.tag}</p>}
-                    {it.title && <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>}
-                    {it.body && <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>}
-                  </div>
-                </div>
-              )
-            ))}
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
+          <div>
+            <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
+              Completion gate
+            </h3>
+            <Body style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 12 }}>
+              Solutions locked until you submit yours. One rule that prevented copying and made the reveal feel earned. 15% who see peer activity start a DM.
+            </Body>
+            <div className="img-hover-wrap" style={{ width: '100%', borderRadius: 12, overflow: 'hidden', marginBottom: 16 }}>
+              <img src="/cases/mate-social-peer-locked.jpg" alt="Locked vs unlocked state" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
+            <div style={{ borderLeft: '3px solid #C4BDFF', backgroundColor: '#F3F1FF', padding: '8px 12px' }}>
+              <p style={{ fontFamily: FD, fontSize: 15, color: '#4A3F8A', lineHeight: 1.6, margin: 0 }}>Worked with design team to extend existing components for code display, peer indicators, and messaging interfaces while maintaining platform consistency</p>
+            </div>
           </div>
         </div>
 
         <div className="reveal" style={{ marginTop: 64 }}>
           <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 20px' }}>Result</p>
-          <div style={{ display: 'flex', gap: 48 }}>
-            {[
-              { n: '1,000+', label: 'Monthly DMs' },
-              { n: '15%', label: 'Clicked at user task\nactivity start a DM' },
-              { n: '2 min', label: 'DMs happen within\n2 minutes of viewing peer code' },
-            ].map((m) => (
-              <div key={m.n}>
-                <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
-                <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
-              </div>
-            ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+            <div style={{ display: 'flex', gap: 48 }}>
+              {[
+                { n: '1,000+', label: 'Monthly DMs' },
+                { n: '15%', label: 'Clicked at user task\nactivity start a DM' },
+              ].map((m) => (
+                <div key={m.n}>
+                  <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
+                  <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
+                </div>
+              ))}
+            </div>
+            <div>
+              <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>2 min</p>
+              <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{'DMs happen within 2 minutes\nof viewing peer code'}</p>
+            </div>
           </div>
         </div>
 
@@ -501,15 +501,20 @@ export function MateAcademySocial() {
       </section>
 
       {/* ── MOBILE ───────────────────────────────────────────────────────── */}
-      <section id="mobile" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
+      <section id="mobile" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 40 }}>
         <SectionLabel>Mobile app</SectionLabel>
-        <H2>Social features on the go</H2>
-        <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.75, margin: '4px 0 28px' }}>
+        <div style={{ margin: '0 0 6px' }}><H2>Social features on the go</H2></div>
+        <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.6, margin: '0 0 16px' }}>
           Full feature parity on mobile: students solve tasks, message peers, and review solutions from any device, anytime.
         </p>
 
-        <div style={{ borderRadius: 12, overflow: 'hidden' }}>
-          <Placeholder aspect="16/8" label="📷 Web → Mobile: profile, solution sharing, solving now" />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ borderRadius: 12, overflow: 'hidden' }}>
+            <img src="/cases/mate-social-mobile-1.jpg" alt="Mobile — peer solutions" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+          <div style={{ borderRadius: 12, overflow: 'hidden' }}>
+            <img src="/cases/mate-social-mobile-2.jpg" alt="Mobile — solution sharing" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
         </div>
 
         <div style={{ marginTop: 40 }}>
@@ -540,7 +545,6 @@ export function MateAcademySocial() {
             { title: 'Completion gates preserve integrity', body: 'Lock-then-reveal kept learning honest and made peer solutions feel earned, not copied.' },
             { title: 'Privacy drives engagement', body: 'Students shared more when they controlled what\'s visible. Forced transparency kills adoption.' },
             { title: 'Data validates intuition', body: 'Analytics confirmed isolation as the churn driver before we designed anything. Post-launch data shaped every iteration. Design decisions backed by numbers, not assumptions.' },
-            { title: 'Scale the system', body: 'Both features built on existing components. Faster handoff, zero visual debt.' },
           ].map((l, i) => (
             <div key={i}>
               <p style={{ fontFamily: FD, fontSize: 17, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1.3 }}>{l.title}</p>

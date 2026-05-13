@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { testimonials } from "@/lib/data";
 
 const FONT_MONO = "'Geist Mono', monospace";
 const FONT_BODY = "'Geist', -apple-system, sans-serif";
+
 
 function getInitials(name: string) {
   return name.split(" ").filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join("");
@@ -17,6 +18,7 @@ export function TestimonialsCarousel() {
 
   const prev = () => setActive(i => (i - 1 + testimonials.length) % testimonials.length);
   const next = () => setActive(i => (i + 1) % testimonials.length);
+
 
   return (
     <div>
@@ -32,7 +34,7 @@ export function TestimonialsCarousel() {
       </p>
 
       {/* Author */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
         {tWithImage.image ? (
           <img
             src={tWithImage.image}
@@ -59,22 +61,16 @@ export function TestimonialsCarousel() {
         </div>
       </div>
 
-      {/* Arrow navigation */}
-      <div style={{ display: "flex", gap: 8 }}>
-        {[{ Icon: ChevronLeft, onClick: prev, aria: "Previous" }, { Icon: ChevronRight, onClick: next, aria: "Next" }].map(btn => (
-          <button
-            key={btn.aria}
-            onClick={btn.onClick}
-            aria-label={btn.aria}
-            style={{
-              width: 40, height: 40, borderRadius: "50%",
-              border: "none", backgroundColor: "#F5F5F5",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              cursor: "pointer", color: "#0B0D11",
-            }}
-          ><btn.Icon size={18} strokeWidth={1.5} /></button>
-        ))}
+      {/* Arrow buttons */}
+      <div style={{ display: "flex", gap: 6 }}>
+        <button onClick={prev} aria-label="Previous" className="testimonial-arrow">
+          <ChevronLeft size={12} strokeWidth={2} />
+        </button>
+        <button onClick={next} aria-label="Next" className="testimonial-arrow">
+          <ChevronRight size={12} strokeWidth={2} />
+        </button>
       </div>
+
     </div>
   );
 }

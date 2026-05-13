@@ -71,8 +71,8 @@ export default function Home() {
         {/* CTAs */}
         <style>{`
           .hero-btn { transition: all 0.15s ease; }
-          .hero-btn-primary:hover { background-color: #E8EF7A !important; }
-          .hero-btn-primary:active { background-color: #D8E060 !important; transform: scale(0.97); }
+          .hero-btn-primary:hover { background-color: #C8C2FF !important; border-color: rgba(109,40,217,0.28) !important; }
+          .hero-btn-primary:active { background-color: #B8B1FF !important; border-color: rgba(109,40,217,0.32) !important; transform: scale(0.97); }
           .hero-btn-secondary:hover { background: #F7F7F5 !important; border-color: #E0E0DC !important; box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important; }
           .hero-btn-secondary:active { background: #F0F0ED !important; border-color: #D4D4D0 !important; box-shadow: none !important; transform: scale(0.97); }
         `}</style>
@@ -80,7 +80,7 @@ export default function Home() {
           <CopyEmailButton />
           {[
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anna-yarigina-4a69a31a1/' },
-            { label: 'Resume (CV)', href: 'https://drive.google.com/file/d/1Rg_xoLK2eRU--qnTOWbYgQCjLRyazIuq/view?usp=sharing' },
+            { label: 'Resume (CV)', href: 'https://drive.google.com/file/d/1XY3IjRvj2GHlLz4XpjtNDcHbmI-CM71Z/view?usp=sharing' },
           ].map(({ label, href }) => (
             <a
               key={label}
@@ -132,7 +132,7 @@ export default function Home() {
       <section className="r-section-cases" style={{ marginBottom: 200 }}>
 
         {/* Featured card — full width */}
-        <div style={{ marginBottom: 48 }}>
+        <div className="r-case-gap" style={{ marginBottom: 48 }}>
           <Link href="/cases/mate-academy" className="case-hover-zone" style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}>
             <div className="r-featured-h" style={{
               width: '100%', height: 400, borderRadius: 0,
@@ -284,7 +284,7 @@ export default function Home() {
 
           {/* Left — heading */}
           <div>
-            <h2 style={{
+            <h2 className="r-page-h2" style={{
               fontFamily: FONT_DISPLAY, fontSize: 'clamp(24px, 2.55vw, 44px)', fontWeight: 500,
               color: T.inkPrimary, margin: 0, lineHeight: 1.1, letterSpacing: '-0.02em',
             }}>
@@ -334,7 +334,7 @@ export default function Home() {
 
       {/* ── ARTICLES ─────────────────────────────────────── */}
       <section className="r-section-lg" style={{ marginBottom: 120 }} id="publications">
-        <h2 style={{
+        <h2 className="r-writing-title r-page-h2" style={{
           fontFamily: FONT_DISPLAY, fontSize: 'clamp(24px, 2.55vw, 44px)', fontWeight: 500,
           color: T.inkPrimary, margin: '0 0 24px', lineHeight: 1.1, letterSpacing: '-0.02em',
         }}>
@@ -372,7 +372,7 @@ export default function Home() {
 
       {/* ── TESTIMONIALS ─────────────────────────────────── */}
       <section style={{ marginBottom: 0 }}>
-        <h2 style={{
+        <h2 className="r-page-h2" style={{
           fontFamily: FONT_DISPLAY, fontSize: 'clamp(24px, 2.55vw, 44px)', fontWeight: 500,
           color: T.inkPrimary, margin: '0 0 40px', lineHeight: 1.1, letterSpacing: '-0.02em',
         }}>

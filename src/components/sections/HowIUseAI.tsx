@@ -60,7 +60,7 @@ export function HowIUseAI() {
 
       {/* Left — heading */}
       <div>
-        <h2 style={{
+        <h2 className="r-page-h2" style={{
           fontFamily: FONT_DISPLAY,
           fontSize: 'clamp(24px, 2.55vw, 44px)',
           fontWeight: 500,

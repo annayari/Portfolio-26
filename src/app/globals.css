@@ -336,6 +336,19 @@ body {
 
 /* ── Responsive helpers ─────────────────────────────────── */
 
+.footer-link:hover { color: #8B7FD4 !important; text-decoration: underline !important; }
+.testimonial-arrow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 9999px;
+  background: linear-gradient(to bottom, #FCFCFC 0%, #FAFAFA 100%);
+  border: 1px solid #E4E4E0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  cursor: pointer; color: #0B0D11; flex-shrink: 0;
+  transition: box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+.testimonial-arrow:hover  { background: #F7F7F5; border-color: #E0E0DC; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.testimonial-arrow:active { background: #F0F0ED; border-color: #D4D4D0; box-shadow: none; transform: scale(0.97); }
+
 /* Below lg (1024px): remove case-page sidebar left-padding */
 @media (max-width: 1023px) {
   .r-case-outer { padding-left: 24px !important; }
@@ -344,8 +357,8 @@ body {
 @media (max-width: 640px) {
   .r-section-hero  { margin-bottom: 32px !important; }
   .r-section-strip { margin-bottom: 40px !important; }
-  .r-section-cases { margin-bottom: 48px !important; }
-  .r-section-lg    { margin-bottom: 48px !important; }
+  .r-section-cases { margin-bottom: 56px !important; }
+  .r-section-lg    { margin-bottom: 112px !important; }
 
   /* Typography */
   .r-hero-title  { font-size: 26px !important; }
@@ -353,6 +366,21 @@ body {
 
   /* Featured case image — switch from fixed height to aspect ratio */
   .r-featured-h  { height: auto !important; aspect-ratio: 16 / 9 !important; }
+
+  /* Section headings */
+  .r-page-h2 { font-size: 32px !important; }
+
+  /* Footer */
+  .r-footer { margin-top: 32px !important; }
+
+  /* Writing section */
+  .r-writing-title { margin-bottom: 2px !important; }
+  .r-article-row   { display: grid !important; grid-template-columns: 1fr auto !important; align-items: baseline !important; gap: 8px 16px !important; }
+  .r-article-date  { text-align: right !important; white-space: nowrap !important; }
+
+  /* Cases — uniform 48px gap on mobile */
+  .r-case-gap                { margin-bottom: 48px !important; }
+  .r-section-cases .r-grid-2 { gap: 48px !important; margin-bottom: 48px !important; }
 
   /* Grid collapses */
   .r-grid-2      { grid-template-columns: 1fr !important; }
