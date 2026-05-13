@@ -27,7 +27,7 @@ export function TestimonialsCarousel() {
       {/* Quote */}
       <p style={{
         fontFamily: FONT_BODY, fontSize: 17, fontWeight: 500, color: "rgba(11,13,17,0.8)",
-        lineHeight: 1.55, margin: "0 0 20px",
+        lineHeight: 1.35, margin: "20px 0 20px",
       }}>
         &ldquo;{t.quote}&rdquo;
       </p>
@@ -54,7 +54,7 @@ export function TestimonialsCarousel() {
           <p style={{ fontFamily: FONT_MONO, fontSize: 14, fontWeight: 400, color: "#111111", margin: 0 }}>
             {t.name}
           </p>
-          <p style={{ fontFamily: FONT_MONO, fontSize: 13, color: "#999999", margin: "3px 0 0" }}>
+          <p style={{ fontFamily: FONT_BODY, fontSize: 14, fontWeight: 400, color: "#AAAAAA", lineHeight: 1.55, letterSpacing: '-0.01em', margin: "3px 0 0" }}>
             {t.role}
           </p>
         </div>
@@ -63,10 +63,10 @@ export function TestimonialsCarousel() {
       {/* Arrow buttons */}
       <div style={{ display: "flex", gap: 6 }}>
         <button onClick={prev} aria-label="Previous" className="testimonial-arrow">
-          <ChevronLeft size={12} strokeWidth={2} />
+          <ChevronLeft size={16} strokeWidth={2} />
         </button>
         <button onClick={next} aria-label="Next" className="testimonial-arrow">
-          <ChevronRight size={12} strokeWidth={2} />
+          <ChevronRight size={16} strokeWidth={2} />
         </button>
       </div>
 

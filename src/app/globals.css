@@ -339,7 +339,7 @@ body {
 .footer-link:hover { color: #8B7FD4 !important; text-decoration: underline !important; }
 .testimonial-arrow {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 32px; height: 32px; border-radius: 9999px;
+  width: 44px; height: 44px; border-radius: 9999px;
   background: linear-gradient(to bottom, #FCFCFC 0%, #FAFAFA 100%);
   border: 1px solid #E4E4E0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
@@ -379,8 +379,8 @@ body {
   .r-article-date  { text-align: right !important; white-space: nowrap !important; }
 
   /* Cases — uniform 48px gap on mobile */
-  .r-case-gap                { margin-bottom: 48px !important; }
-  .r-section-cases .r-grid-2 { gap: 48px !important; margin-bottom: 48px !important; }
+  .r-case-gap                { margin-bottom: 64px !important; }
+  .r-section-cases .r-grid-2 { gap: 64px !important; margin-bottom: 64px !important; }
 
   /* Grid collapses */
   .r-grid-2      { grid-template-columns: 1fr !important; }
@@ -412,6 +412,7 @@ body {
   /* Nav items: tighter horizontal padding */
   .r-nav-item { padding-left: 10px !important; padding-right: 10px !important; }
 
+
   /* Case page: remove sidebar offset, tighten padding */
   .r-case-outer { padding-left: 16px !important; padding-right: 16px !important; padding-top: 12px !important; }
 
@@ -422,10 +423,12 @@ body {
   /* Page wrappers: reduce top padding, tighten side padding */
   .r-page-wrap { padding-top: 32px !important; padding-left: 16px !important; padding-right: 16px !important; }
 
-  /* Hero buttons: hug content, left-aligned */
-  .r-hero-btns { flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; justify-content: flex-start !important; }
-  .r-hero-btns > * { flex: none !important; width: auto !important; }
-  .r-hero-btns .hero-btn { padding-left: 14px !important; padding-right: 14px !important; font-size: 13px !important; }
+  /* Hero buttons: content-width row, taller on mobile */
+  .r-hero-btns { flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; width: 100% !important; }
+  .r-hero-btns > * { flex: none !important; }
+  .r-hero-btns .hero-btn { height: 48px !important; min-height: 48px !important; justify-content: center !important; font-size: 15px !important; padding: 0 20px !important; box-sizing: border-box !important; }
+  .r-hero-btns button { height: 48px !important; min-height: 48px !important; justify-content: center !important; font-size: 15px !important; padding: 0 20px !important; box-sizing: border-box !important; }
+  .r-email-btn { padding: 0 20px !important; }
 
   /* Featured image: taller on mobile */
   .r-featured-h { aspect-ratio: 4 / 3 !important; }
@@ -468,7 +471,7 @@ body {
   padding: 5px 10px 5px 8px;
   background: #FFFFFF;
   border: none;
-  border-radius: 9999px;
+  border-radius: 8px;
   font-family: 'Geist', -apple-system, sans-serif;
   font-size: 12px;
   font-weight: 500;
@@ -488,4 +491,11 @@ body {
   margin-top: 4px;
   margin-bottom: 16px;
   height: 32px;
+  text-decoration: none;
+  transition: text-decoration 0.1s ease;
+}
+a:hover .r-mobile-course-badge,
+a:active .r-mobile-course-badge {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

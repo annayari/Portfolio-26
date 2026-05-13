@@ -46,7 +46,7 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="r-section-hero" style={{ marginBottom: 96 }}>
         {/* Label */}
-        <p className="hero-word" style={{ fontFamily: FONT_BODY, fontSize: 18, fontWeight: 400, letterSpacing: '-0.02em', color: '#888888', margin: '0 0 8px', animationDelay: '0.05s' }}>
+        <p className="hero-word" style={{ fontFamily: FONT_BODY, fontSize: 18, fontWeight: 400, letterSpacing: '-0.02em', color: '#B3B3B3', margin: '0 0 8px', animationDelay: '0.05s' }}>
           Product designer based in Warsaw
         </p>
 
@@ -61,11 +61,11 @@ export default function Home() {
           maxWidth: 900,
         }}>
           <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.17s' }}>I&apos;m Anna </span>
-          <span className="hero-word" style={{ color: '#C8C8C8', animationDelay: '0.25s' }}>Yarigina, </span>
+          <span className="hero-word" style={{ color: '#B3B3B3', animationDelay: '0.25s' }}>Yarigina, </span>
           <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.33s' }}>6+ years </span>
-          <span className="hero-word" style={{ color: '#C8C8C8', animationDelay: '0.41s' }}>designing </span>
+          <span className="hero-word" style={{ color: '#B3B3B3', animationDelay: '0.41s' }}>designing </span>
           <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.49s' }}>data-driven solutions </span>
-          <span className="hero-word" style={{ color: '#C8C8C8', animationDelay: '0.57s' }}>for desktop, mobile, and web products across </span>
+          <span className="hero-word" style={{ color: '#B3B3B3', animationDelay: '0.57s' }}>for desktop, mobile, and web products across </span>
           <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.65s' }}>AI, Ed-tech and Health &amp; Fitness</span>
         </h1>
 
@@ -310,19 +310,21 @@ export default function Home() {
             style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}
           >
             <p style={{
-              fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
-              lineHeight: 1.3,
-              color: '#6B6B7A', margin: '0 0 8px',
-            }}>
-              UI/UX course
-            </p>
-            <p style={{
-              fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500,
-              color: 'rgba(11,13,17,0.8)', lineHeight: 1.4, margin: '0 0 14px',
+              fontFamily: FONT_BODY, fontSize: 16, fontWeight: 400,
+              color: 'rgba(11,13,17,0.8)', lineHeight: 1.4, margin: '0 0 12px',
             }}>
               Mentored 200+ students at Mate academy in Ukraine, supporting them in building practical skills and getting hired for junior designer roles
             </p>
-            <span className="r-mobile-course-badge">View course →</span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '0 0 14px' }}>
+              <p style={{
+                fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
+                lineHeight: 1.3,
+                color: '#6B6B7A', margin: 0,
+              }}>
+                UI/UX course
+              </p>
+              <span className="r-mobile-course-badge" style={{ fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500, color: '#6B6B7A', margin: 0 }}>View course →</span>
+            </div>
             <div style={{
               borderRadius: 16, border: `1px solid ${T.border}`,
               backgroundColor: '#F7F7F9',
@@ -359,7 +361,7 @@ export default function Home() {
               className="r-article-row"
               style={{
                 display: 'flex', alignItems: 'baseline',
-                justifyContent: 'space-between', gap: 24,
+                justifyContent: 'space-between', gap: 48,
                 padding: '10px 0', textDecoration: 'none',
               }}
             >
@@ -367,7 +369,7 @@ export default function Home() {
                 {a.title}
               </span>
               <span className="r-article-date" style={{ fontFamily: FONT_BODY, fontSize: 14, color: '#6B6B7A', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                {a.date}
+                {a.date?.split(' ').pop()}
               </span>
             </a>
           ))}

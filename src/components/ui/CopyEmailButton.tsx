@@ -44,7 +44,7 @@ export function CopyEmailButton() {
 
       <button
         onClick={handleClick}
-        className="hero-btn hero-btn-primary"
+        className="hero-btn hero-btn-primary r-email-btn"
         style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
           fontFamily: FONT_BODY, fontSize: 15, fontWeight: 500,
