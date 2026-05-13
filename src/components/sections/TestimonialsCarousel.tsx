@@ -22,12 +22,11 @@ export function TestimonialsCarousel() {
 
   return (
     <div>
-      {/* Divider */}
-      <div style={{ borderTop: "1px solid #E5E5E5", marginBottom: 28 }} />
+      <div style={{ marginBottom: 12 }} />
 
       {/* Quote */}
       <p style={{
-        fontFamily: FONT_BODY, fontSize: 17, fontWeight: 500, color: "#111111",
+        fontFamily: FONT_BODY, fontSize: 17, fontWeight: 500, color: "rgba(11,13,17,0.8)",
         lineHeight: 1.55, margin: "0 0 20px",
       }}>
         &ldquo;{t.quote}&rdquo;

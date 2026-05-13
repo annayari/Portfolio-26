@@ -341,7 +341,7 @@ export function MateAcademyMentor() {
                 body: 'Added per-card average review time display. Set the shown average 20% below the measured median. Mentors calibrated to it without being told to — review time dropped without a single policy change.',
               },
             ].map((it) => (
-              <div key={it.v} className="stagger-item r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
+              <div key={it.v} className="stagger-item r-grid-asym r-case-iteration" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
                 <div className="img-hover-wrap" style={{ borderRadius: 12, overflow: 'hidden' }}>
                   <Placeholder aspect="4/3" label={`📷 Review plugin ${it.v}`} />
                 </div>
@@ -419,7 +419,7 @@ export function MateAcademyMentor() {
                 body: 'Calendar shows daily and weekly rhythm — when mentors work, not just how long. Editing history preserved for audit trail. Coordinators can see corrections without manual monitoring.',
               },
             ].map((it) => (
-              <div key={it.v} className="stagger-item r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
+              <div key={it.v} className="stagger-item r-grid-asym r-case-iteration" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
                 <div className="img-hover-wrap" style={{ borderRadius: 12, overflow: 'hidden' }}>
                   <Placeholder aspect="4/3" label={`📷 Time tracker ${it.v}`} />
                 </div>
@@ -483,7 +483,7 @@ export function MateAcademyMentor() {
                 body: 'Coordinators get flagged on anomalies — without manual monitoring. Prototyped with both mentors and coordinators, iterated on data visualization clarity post-launch. Post-launch data shaped every iteration.',
               },
             ].map((it) => (
-              <div key={it.v} className="stagger-item r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
+              <div key={it.v} className="stagger-item r-grid-asym r-case-iteration" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
                 <div className="img-hover-wrap" style={{ borderRadius: 12, overflow: 'hidden' }}>
                   <Placeholder aspect="4/3" label={`📷 Dashboard ${it.v}`} />
                 </div>

@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Clock } from "lucide-react";
 import { cases } from "@/lib/data";
 import { articles as articleList } from "@/lib/articles";
 import { ScaleOnScroll } from "@/components/ui/ScaleOnScroll";
 import { CopyEmailButton } from "@/components/ui/CopyEmailButton";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { HowIUseAI } from "@/components/sections/HowIUseAI";
+import { RevealObserver } from "@/components/ui/RevealObserver";
 
 const T = {
   surfaceBase:    '#FDFDFF',
@@ -40,32 +41,32 @@ export default function Home() {
 
   return (
     <div className="r-page-wrap" style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px 16px' }}>
+      <RevealObserver />
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="r-section-hero" style={{ marginBottom: 64 }}>
+      <section className="r-section-hero" style={{ marginBottom: 96 }}>
         {/* Label */}
-        <p className="hero-animate" style={{ fontFamily: FONT_BODY, fontSize: 14, fontWeight: 400, color: '#B3B3B3', margin: '0 0 8px', animationDelay: '0.1s' }}>
+        <p className="hero-word" style={{ fontFamily: FONT_BODY, fontSize: 18, fontWeight: 400, letterSpacing: '-0.02em', color: '#888888', margin: '0 0 8px', animationDelay: '0.05s' }}>
           Product designer based in Warsaw
         </p>
 
         {/* Headline — mixed weight, large */}
-        <h1 className="hero-animate r-hero-title" style={{
+        <h1 className="r-hero-title" style={{
           fontFamily: FONT_DISPLAY,
           fontSize: 40,
           lineHeight: 1.15,
           letterSpacing: '-0.02em',
           fontWeight: 500,
-          margin: '0 0 36px',
+          margin: '0 0 28px',
           maxWidth: 900,
-          animationDelay: '0.25s',
         }}>
-          <span style={{ color: T.inkPrimary }}>I&apos;m Anna </span>
-          <span style={{ color: '#B3B3B3' }}>Yarigina, </span>
-          <span style={{ color: T.inkPrimary }}>6+ years </span>
-          <span style={{ color: '#B3B3B3' }}>designing </span>
-          <span style={{ color: T.inkPrimary }}>data-driven solutions </span>
-          <span style={{ color: '#B3B3B3' }}>for desktop, mobile, and web products across </span>
-          <span style={{ color: T.inkPrimary }}>AI, Ed-tech and Health &amp; Fitness</span>
+          <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.17s' }}>I&apos;m Anna </span>
+          <span className="hero-word" style={{ color: '#C8C8C8', animationDelay: '0.25s' }}>Yarigina, </span>
+          <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.33s' }}>6+ years </span>
+          <span className="hero-word" style={{ color: '#C8C8C8', animationDelay: '0.41s' }}>designing </span>
+          <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.49s' }}>data-driven solutions </span>
+          <span className="hero-word" style={{ color: '#C8C8C8', animationDelay: '0.57s' }}>for desktop, mobile, and web products across </span>
+          <span className="hero-word" style={{ color: T.inkPrimary, animationDelay: '0.65s' }}>AI, Ed-tech and Health &amp; Fitness</span>
         </h1>
 
         {/* CTAs */}
@@ -76,7 +77,7 @@ export default function Home() {
           .hero-btn-secondary:hover { background: #F7F7F5 !important; border-color: #E0E0DC !important; box-shadow: 0 1px 4px rgba(0,0,0,0.04) !important; }
           .hero-btn-secondary:active { background: #F0F0ED !important; border-color: #D4D4D0 !important; box-shadow: none !important; transform: scale(0.97); }
         `}</style>
-        <div className="hero-animate" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, animationDelay: '0.45s' }}>
+        <div className="hero-animate r-hero-btns" style={{ display: 'flex', flexWrap: 'wrap', gap: 10, animationDelay: '0.45s' }}>
           <CopyEmailButton />
           {[
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anna-yarigina-4a69a31a1/' },
@@ -90,8 +91,8 @@ export default function Home() {
               className="hero-btn hero-btn-secondary"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                fontFamily: FONT_BODY, fontSize: 14, fontWeight: 500,
-                padding: '8px 20px', borderRadius: 9999,
+                fontFamily: FONT_BODY, fontSize: 15, fontWeight: 500,
+                padding: '11px 26px', borderRadius: 9999,
                 background: 'linear-gradient(to bottom, #FCFCFC 0%, #FAFAFA 100%)',
                 border: `1px solid ${T.border}`,
                 boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
@@ -106,9 +107,9 @@ export default function Home() {
       </section>
 
       {/* ── COMPANIES MARQUEE ─────────────────────────────── */}
-      <section className="r-section-strip" style={{ marginBottom: 72 }}>
+      <section className="r-section-strip reveal" style={{ marginBottom: 72 }}>
         <p style={{
-          fontFamily: FONT_BODY, fontSize: 14, fontWeight: 500, color: '#B3B3B3',
+          fontFamily: FONT_BODY, fontSize: 14, fontWeight: 500, color: '#AAAAAA',
           margin: '0 0 20px',
         }}>
           Companies I&apos;ve worked with
@@ -129,22 +130,26 @@ export default function Home() {
       </section>
 
       {/* ── CASES ────────────────────────────────────────────── */}
-      <section className="r-section-cases" style={{ marginBottom: 200 }}>
+      <section className="r-section-cases" style={{ marginBottom: 120 }}>
 
         {/* Featured card — full width */}
-        <div className="r-case-gap" style={{ marginBottom: 48 }}>
+        <div className="r-case-gap reveal" style={{ marginBottom: 48 }}>
           <Link href="/cases/mate-academy" className="case-hover-zone" style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}>
             <div className="r-featured-h" style={{
-              width: '100%', height: 400, borderRadius: 0,
+              width: '100%', height: 400, borderRadius: 12,
               backgroundColor: '#F6F4FD',
               overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
               <ScaleOnScroll>
-                <img
-                  src="/cases/mate-academy-cover.png"
-                  alt="Gamification leaderboard UI"
-                  style={{ display: 'block', width: '88%', maxWidth: 760, height: 'auto' }}
-                />
+                <picture style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                  <source media="(max-width: 640px)" srcSet="/cases/mate-academy-cover-mobile.jpg" />
+                  <img
+                    src="/cases/mate-academy-cover.png"
+                    alt="Gamification leaderboard UI"
+                    className="r-featured-img"
+                    style={{ display: 'block', width: '84%', maxWidth: 880, height: 'auto', margin: '0 auto' }}
+                  />
+                </picture>
               </ScaleOnScroll>
             </div>
             <p style={{
@@ -154,21 +159,21 @@ export default function Home() {
               Mate academy
             </p>
             <h2 style={{
-              fontFamily: FONT_DISPLAY, fontSize: 16, fontWeight: 500,
+              fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 500,
               color: T.inkPrimary, margin: 0, lineHeight: 1.4,
             }}>
-              Boosting DAU/MAU by 36% with gamification features from scratch
+              Boosting DAU/MAU by 36% <span style={{ whiteSpace: 'nowrap' }}>with a gamification</span> ecosystem from scratch
             </h2>
           </Link>
         </div>
 
         {/* Grid row 1 — Mate academy */}
-        <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 48 }}>
+        <div className="r-grid-2 reveal reveal-d1" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 48 }}>
 
           {/* Case 2 — Mate academy social */}
           <Link href="/cases/mate-academy-social" className="case-hover-zone" style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}>
             <div style={{
-              width: '100%', aspectRatio: '4/3', borderRadius: 0,
+              width: '100%', aspectRatio: '4/3', borderRadius: 12,
               backgroundColor: T.surfaceOverlay, overflow: 'hidden',
             }}>
               <img src="/cases/mate-academy-social-cover.jpg" alt="Mate academy social features" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
@@ -180,7 +185,7 @@ export default function Home() {
               Mate academy
             </p>
             <h3 style={{
-              fontFamily: FONT_DISPLAY, fontSize: 16, fontWeight: 500,
+              fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 500,
               color: T.inkPrimary, lineHeight: 1.4, margin: 0,
             }}>
               Boosting user DMs and task interaction by 15% with launched social features
@@ -190,19 +195,20 @@ export default function Home() {
           {/* Case 3 — Mate academy mentor */}
           <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
             <div style={{
-              width: '100%', aspectRatio: '4/3', borderRadius: 0,
-              backgroundColor: T.surfaceOverlay, overflow: 'hidden',
+              width: '100%', aspectRatio: '4/3', borderRadius: 12,
+              backgroundColor: T.surfaceOverlay, overflow: 'hidden', position: 'relative',
             }}>
               <img src="/cases/mate-academy-mentor-cover.jpg" alt="Mate academy mentor review" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span className="r-wip-pill"><Clock size={11} strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" />Currently building</span>
             </div>
-            <p style={{
+            <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
               color: '#6B6B7A', margin: '12px 0 4px',
             }}>
               Mate academy
             </p>
             <h3 style={{
-              fontFamily: FONT_DISPLAY, fontSize: 16, fontWeight: 500,
+              fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 500,
               color: T.inkPrimary, lineHeight: 1.4, margin: 0,
             }}>
               Reducing the time for mentors to review home tasks by 25%
@@ -212,12 +218,12 @@ export default function Home() {
         </div>
 
         {/* Grid row 2 — mobile apps */}
-        <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
+        <div className="r-grid-2 reveal reveal-d1" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
 
           {/* Case 4 — CasaVista */}
           <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
             <div className="phone-bg" style={{
-              width: '100%', aspectRatio: '4/3', borderRadius: 0,
+              width: '100%', aspectRatio: '4/3', borderRadius: 12,
               overflow: 'hidden',
               position: 'relative',
             }}>
@@ -237,15 +243,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              <span className="r-wip-pill"><Clock size={11} strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" />Currently building</span>
             </div>
-            <p style={{
+            <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
               color: '#6B6B7A', margin: '12px 0 4px',
             }}>
               CasaVista app
             </p>
             <h3 style={{
-              fontFamily: FONT_DISPLAY, fontSize: 16, fontWeight: 500,
+              fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 500,
               color: T.inkPrimary, lineHeight: 1.4, margin: 0,
             }}>
               Increasing new user conversion to subscription by 30%
@@ -255,19 +262,20 @@ export default function Home() {
           {/* Case 5 — Sipless */}
           <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
             <div style={{
-              width: '100%', aspectRatio: '4/3', borderRadius: 0,
-              backgroundColor: T.surfaceOverlay, overflow: 'hidden',
+              width: '100%', aspectRatio: '4/3', borderRadius: 12,
+              backgroundColor: T.surfaceOverlay, overflow: 'hidden', position: 'relative',
             }}>
               <img src="/cases/sipless-cover.jpg" alt="Sipless app" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <span className="r-wip-pill"><Clock size={11} strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" />Currently building</span>
             </div>
-            <p style={{
+            <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
               color: '#6B6B7A', margin: '12px 0 4px',
             }}>
               Sipless app
             </p>
             <h3 style={{
-              fontFamily: FONT_DISPLAY, fontSize: 16, fontWeight: 500,
+              fontFamily: FONT_DISPLAY, fontSize: 18, fontWeight: 500,
               color: T.inkPrimary, lineHeight: 1.4, margin: 0,
             }}>
               Boosting streak conversion by 10% and cut cancellation by 15%
@@ -279,8 +287,8 @@ export default function Home() {
       </section>
 
       {/* ── MENTORSHIP ───────────────────────────────────── */}
-      <section className="r-section-lg" style={{ marginBottom: 120 }}>
-        <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'flex-start' }}>
+      <section className="r-section-lg reveal" style={{ marginBottom: 120 }}>
+        <div className="r-grid-2 r-mentoring-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'flex-start' }}>
 
           {/* Left — heading */}
           <div>
@@ -310,16 +318,17 @@ export default function Home() {
             </p>
             <p style={{
               fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500,
-              color: T.inkPrimary, lineHeight: 1.4, margin: '0 0 20px',
+              color: 'rgba(11,13,17,0.8)', lineHeight: 1.4, margin: '0 0 14px',
             }}>
               Mentored 200+ students at Mate academy in Ukraine, supporting them in building practical skills and getting hired for junior designer roles
             </p>
+            <span className="r-mobile-course-badge">View course →</span>
             <div style={{
               borderRadius: 16, border: `1px solid ${T.border}`,
               backgroundColor: '#F7F7F9',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               aspectRatio: '660/520',
-              padding: 32,
+              padding: '56px 32px',
             }}>
               <img
                 src="/mentoring-zoom.png"
@@ -333,7 +342,7 @@ export default function Home() {
       </section>
 
       {/* ── ARTICLES ─────────────────────────────────────── */}
-      <section className="r-section-lg" style={{ marginBottom: 120 }} id="publications">
+      <section className="r-section-lg reveal" style={{ marginBottom: 120 }} id="publications">
         <h2 className="r-writing-title r-page-h2" style={{
           fontFamily: FONT_DISPLAY, fontSize: 'clamp(24px, 2.55vw, 44px)', fontWeight: 500,
           color: T.inkPrimary, margin: '0 0 24px', lineHeight: 1.1, letterSpacing: '-0.02em',
@@ -354,7 +363,7 @@ export default function Home() {
                 padding: '10px 0', textDecoration: 'none',
               }}
             >
-              <span style={{ fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500, color: T.inkPrimary, lineHeight: 1.5 }}>
+              <span style={{ fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500, color: 'rgba(11,13,17,0.8)', lineHeight: 1.5 }}>
                 {a.title}
               </span>
               <span className="r-article-date" style={{ fontFamily: FONT_BODY, fontSize: 14, color: '#6B6B7A', whiteSpace: 'nowrap', flexShrink: 0 }}>
@@ -374,7 +383,7 @@ export default function Home() {
       <section style={{ marginBottom: 0 }}>
         <h2 className="r-page-h2" style={{
           fontFamily: FONT_DISPLAY, fontSize: 'clamp(24px, 2.55vw, 44px)', fontWeight: 500,
-          color: T.inkPrimary, margin: '0 0 40px', lineHeight: 1.1, letterSpacing: '-0.02em',
+          color: T.inkPrimary, margin: '0 0 16px', lineHeight: 1.1, letterSpacing: '-0.02em',
         }}>
           Growth through<br />feedback
         </h2>

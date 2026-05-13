@@ -58,13 +58,14 @@ const books = [
 
 /* ── Gallery ── */
 const gallerySlots = [
-  { color: '#B0A898', src: '/about-photo-4.jpg' },    // laptop Google Meet
   { color: '#C0B8B0', src: '/about-photo-main.jpg' }, // portrait
   { color: '#C8B89A', src: '/about-photo-5.jpg' },    // sunset beach girls
   { color: '#C8B89A', src: '/about-photo-7.jpg' },    // elephants Thailand
   { color: '#B8B0A8', src: '/about-photo-meet2.png' },// laptop Meet (new)
   { color: '#A8B09A', src: '/about-photo-6.jpg' },    // cooking / wine
   { color: '#A8B8C0', src: '/about-photo-1.jpg' },    // waterfall
+  { color: '#D4C8B8', src: '/about-photo-painting.jpg' }, // painting studio
+  { color: '#C8C4B8', src: '/about-photo-museum.jpg' },   // Monet museum
 ];
 
 /* ── Contacts ── */

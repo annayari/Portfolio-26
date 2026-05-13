@@ -19,7 +19,7 @@ export default async function ArticlePage({ params }: Props) {
   const body = articleBodies[slug];
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-6 md:py-8">
+    <div className="r-article-page max-w-2xl mx-auto px-6 py-6 md:py-8">
 
       <BackButton />
 

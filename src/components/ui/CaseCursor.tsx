@@ -91,6 +91,7 @@ export function CaseCursor() {
   return (
     <div
       ref={wrapRef}
+      className="r-case-cursor"
       style={{
         position: 'fixed', top: 0, left: 0, zIndex: 9999,
         pointerEvents: 'none', willChange: 'transform', opacity: 0,

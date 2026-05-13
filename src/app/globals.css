@@ -355,10 +355,10 @@ body {
 }
 
 @media (max-width: 640px) {
-  .r-section-hero  { margin-bottom: 32px !important; }
-  .r-section-strip { margin-bottom: 40px !important; }
-  .r-section-cases { margin-bottom: 56px !important; }
-  .r-section-lg    { margin-bottom: 112px !important; }
+  .r-section-hero  { margin-bottom: 56px !important; }
+  .r-section-strip { margin-bottom: 56px !important; }
+  .r-section-cases { margin-bottom: 96px !important; }
+  .r-section-lg    { margin-bottom: 96px !important; }
 
   /* Typography */
   .r-hero-title  { font-size: 26px !important; }
@@ -386,6 +386,13 @@ body {
   .r-grid-2      { grid-template-columns: 1fr !important; }
   .r-grid-asym   { grid-template-columns: 1fr !important; gap: 16px !important; }
 
+  /* Iteration items: text above image on mobile */
+  .r-case-iteration {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 16px !important;
+  }
+
   .r-grid-3-to-1 { grid-template-columns: repeat(2, 1fr) !important; }
   .r-grid-3-to-2 { grid-template-columns: repeat(2, 1fr) !important; }
   .r-grid-4-to-2 { grid-template-columns: repeat(2, 1fr) !important; }
@@ -408,6 +415,77 @@ body {
   /* Case page: remove sidebar offset, tighten padding */
   .r-case-outer { padding-left: 16px !important; padding-right: 16px !important; padding-top: 12px !important; }
 
-  /* Page wrappers: reduce top padding */
-  .r-page-wrap { padding-top: 32px !important; }
+  /* About + article pages: 16px side padding */
+  .about-page-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+  .r-article-page  { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Page wrappers: reduce top padding, tighten side padding */
+  .r-page-wrap { padding-top: 32px !important; padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Hero buttons: hug content, left-aligned */
+  .r-hero-btns { flex-direction: row !important; flex-wrap: nowrap !important; gap: 8px !important; justify-content: flex-start !important; }
+  .r-hero-btns > * { flex: none !important; width: auto !important; }
+  .r-hero-btns .hero-btn { padding-left: 14px !important; padding-right: 14px !important; font-size: 13px !important; }
+
+  /* Featured image: taller on mobile */
+  .r-featured-h { aspect-ratio: 4 / 3 !important; }
+  .r-featured-img { width: 100% !important; max-width: none !important; }
+
+  /* Mentoring section: tighter gap between heading and content */
+  .r-mentoring-grid { gap: 12px !important; }
+
+  /* Hide custom cursor on mobile */
+  .r-case-cursor { display: none !important; }
+
+  /* Mobile-only status badges (replace hidden cursor pill) */
+  .r-mobile-wip-badge    { display: inline-flex !important; }
+  .r-wip-pill            { display: inline-flex !important; }
+  .r-mobile-course-badge { display: flex !important; }
+
+  /* Company label row: name left, badge right */
+  .r-case-company { display: flex !important; justify-content: space-between !important; align-items: center !important; }
+}
+
+/* Hidden on desktop — shown only on mobile via media query above */
+.r-mobile-wip-badge {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5B4FD4;
+}
+
+/* WIP pill overlay on case card image — mobile only */
+.r-wip-pill {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 10px 5px 8px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Geist', -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0B0D11;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.r-mobile-course-badge {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Geist', -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B6B7A;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  height: 32px;
 }

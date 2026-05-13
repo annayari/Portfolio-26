@@ -47,8 +47,8 @@ export function CopyEmailButton() {
         className="hero-btn hero-btn-primary"
         style={{
           display: 'inline-flex', alignItems: 'center', gap: 8,
-          fontFamily: FONT_BODY, fontSize: 14, fontWeight: 500,
-          padding: '8px 20px', borderRadius: 9999,
+          fontFamily: FONT_BODY, fontSize: 15, fontWeight: 500,
+          padding: '11px 26px', borderRadius: 9999,
           backgroundColor: '#D8D2FF',
           border: '1px solid rgba(109,40,217,0.2)',
           color: '#0B0D11',

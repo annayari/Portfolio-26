@@ -199,15 +199,22 @@ export function MateAcademyGamification() {
           fontFamily: FD, fontSize: 36, fontWeight: 500, color: INK,
           lineHeight: 1.15, letterSpacing: '-0.02em', margin: '0 0 24px',
         }}>
-          {['Boosting', 'DAU/MAU', 'by', '36%', 'with'].map((w, i) => (
+          {['Boosting', 'DAU/MAU', 'by', '36%'].map((w, i) => (
             <React.Fragment key={i}>
               <span className="hero-word" style={{ display: 'inline-block', animationDelay: `${i * 0.06 + 0.1}s` }}>{w}</span>{' '}
             </React.Fragment>
           ))}
+          <span style={{ whiteSpace: 'nowrap' }}>
+            {['with', 'a', 'gamification'].map((w, i) => (
+              <React.Fragment key={i}>
+                <span className="hero-word" style={{ display: 'inline-block', animationDelay: `${(i + 4) * 0.06 + 0.1}s` }}>{w}</span>{' '}
+              </React.Fragment>
+            ))}
+          </span>
           <br />
-          {['a', 'gamification', 'ecosystem', 'from', 'scratch'].map((w, i, arr) => (
+          {['ecosystem', 'from', 'scratch'].map((w, i, arr) => (
             <React.Fragment key={i}>
-              <span className="hero-word" style={{ display: 'inline-block', animationDelay: `${(i + 5) * 0.06 + 0.1}s` }}>{w}</span>
+              <span className="hero-word" style={{ display: 'inline-block', animationDelay: `${(i + 7) * 0.06 + 0.1}s` }}>{w}</span>
               {i < arr.length - 1 ? ' ' : ''}
             </React.Fragment>
           ))}
@@ -291,8 +298,7 @@ export function MateAcademyGamification() {
 
       {/* ── STREAKS ──────────────────────────────────────────────────────── */}
       <section id="streaks" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <H2>Streaks to make students open the platform every single day</H2>
-        <Body style={{ marginBottom: 24, lineHeight: 1.4 }}>Building a daily habit loop that <strong style={{ color: INK, fontWeight: 500 }}>survives weekends</strong>, busy days, and self-doubt.</Body>
+        <H2>Streaks to make students open the platform every<br />single day</H2>
 
         {/* iterations */}
         <div style={{ marginBottom: 36, marginTop: 40 }}>
@@ -314,7 +320,7 @@ export function MateAcademyGamification() {
                 img: '/cases/streaks-v3.jpg',
               },
             ].map((it) => (
-              <div key={it.v} className="stagger-item r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
+              <div key={it.v} className="stagger-item r-grid-asym r-case-iteration" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
                 <div className={it.v !== 'V2' ? "img-hover-wrap" : undefined} style={{ borderRadius: 12, overflow: 'hidden' }}>
                   {it.img
                     ? <img src={it.img} alt={it.title} style={{ width: '100%', display: 'block' }} />
@@ -379,7 +385,7 @@ export function MateAcademyGamification() {
         </div>
 
         {/* design decisions */}
-        <div style={{ marginBottom: 36, marginTop: 40 }}>
+        <div style={{ marginBottom: 64, marginTop: 64 }}>
           <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 2px' }}>Design decisions</p>
           <div>
             <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
@@ -512,13 +518,13 @@ export function MateAcademyGamification() {
               },
             ].map((it, i) => (
               <div key={it.v} className="stagger-item">
-                <div className="r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '4fr 2fr', gap: 32, alignItems: 'start' }}>
-                  <div className={it.v === 'V1' ? "img-hover-wrap" : undefined} style={{ borderRadius: 12, overflow: 'hidden' }}>
-                    <img src={it.v === 'V2' ? '/cases/achievements-badges.jpg' : '/cases/achievements-audience.jpg'} alt="Achievements" style={{ width: '100%', display: 'block' }} />
-                  </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   <div>
                     <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>{it.title}</p>
                     <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>{it.body}</p>
+                  </div>
+                  <div className={it.v === 'V1' ? "img-hover-wrap" : undefined} style={{ borderRadius: 12, overflow: 'hidden' }}>
+                    <img src={it.v === 'V2' ? '/cases/achievements-badges.jpg' : '/cases/achievements-audience.jpg'} alt="Achievements" style={{ width: '100%', display: 'block' }} />
                   </div>
                 </div>
               </div>
@@ -576,7 +582,7 @@ export function MateAcademyGamification() {
         </div>
 
         {/* iterations */}
-        <div style={{ marginBottom: 36, marginTop: 40 }}>
+        <div style={{ marginBottom: 64, marginTop: 64 }}>
           <div className="stagger-group" style={{ display: 'flex', flexDirection: 'column' as const, gap: 56 }}>
             {/* V1 — vertical: tag + title + image */}
             <div className="stagger-item" style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
