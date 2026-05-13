@@ -46,8 +46,8 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="r-section-hero" style={{ marginBottom: 96 }}>
         {/* Label */}
-        <p className="hero-word" style={{ fontFamily: FONT_BODY, fontSize: 18, fontWeight: 400, letterSpacing: '-0.02em', color: '#B3B3B3', margin: '0 0 8px', animationDelay: '0.05s' }}>
-          Product designer based in Warsaw
+        <p className="hero-word" style={{ fontFamily: FONT_BODY, fontSize: 18, fontWeight: 500, letterSpacing: '-0.02em', color: '#B3B3B3', margin: '0 0 8px', animationDelay: '0.05s' }}>
+          Product designer
         </p>
 
         {/* Headline — mixed weight, large */}
@@ -154,7 +154,7 @@ export default function Home() {
             </div>
             <p style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
-              color: '#6B6B7A', margin: '12px 0 4px',
+              color: '#6B6B7A', margin: '12px 0 2px',
             }}>
               Mate academy
             </p>
@@ -180,7 +180,7 @@ export default function Home() {
             </div>
             <p style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
-              color: '#6B6B7A', margin: '12px 0 4px',
+              color: '#6B6B7A', margin: '12px 0 2px',
             }}>
               Mate academy
             </p>
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
             <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
-              color: '#6B6B7A', margin: '12px 0 4px',
+              color: '#6B6B7A', margin: '12px 0 2px',
             }}>
               Mate academy
             </p>
@@ -247,7 +247,7 @@ export default function Home() {
             </div>
             <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
-              color: '#6B6B7A', margin: '12px 0 4px',
+              color: '#6B6B7A', margin: '12px 0 2px',
             }}>
               CasaVista app
             </p>
@@ -270,7 +270,7 @@ export default function Home() {
             </div>
             <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
-              color: '#6B6B7A', margin: '12px 0 4px',
+              color: '#6B6B7A', margin: '12px 0 2px',
             }}>
               Sipless app
             </p>
@@ -309,13 +309,21 @@ export default function Home() {
             data-cursor="course"
             style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}
           >
+            {/* Desktop: course label above description */}
+            <p className="r-course-label-top" style={{
+              fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
+              lineHeight: 1.3, color: '#6B6B7A', margin: '0 0 10px',
+            }}>
+              UI/UX course
+            </p>
             <p style={{
               fontFamily: FONT_BODY, fontSize: 16, fontWeight: 400,
               color: 'rgba(11,13,17,0.8)', lineHeight: 1.4, margin: '0 0 12px',
             }}>
               Mentored 200+ students at Mate academy in Ukraine, supporting them in building practical skills and getting hired for junior designer roles
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '0 0 14px' }}>
+            {/* Mobile: course label + view course in a row */}
+            <div className="r-course-row" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', margin: '0 0 14px' }}>
               <p style={{
                 fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
                 lineHeight: 1.3,
@@ -365,7 +373,7 @@ export default function Home() {
                 padding: '10px 0', textDecoration: 'none',
               }}
             >
-              <span style={{ fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500, color: 'rgba(11,13,17,0.8)', lineHeight: 1.5 }}>
+              <span style={{ fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500, color: 'rgba(11,13,17,0.8)', lineHeight: 1.5, letterSpacing: '-0.01em' }}>
                 {a.title}
               </span>
               <span className="r-article-date" style={{ fontFamily: FONT_BODY, fontSize: 14, color: '#6B6B7A', whiteSpace: 'nowrap', flexShrink: 0 }}>

@@ -447,6 +447,13 @@ body {
 
   /* Company label row: name left, badge right */
   .r-case-company { display: flex !important; justify-content: space-between !important; align-items: center !important; }
+
+  /* Testimonial arrows: right-aligned on mobile */
+  .r-testimonial-arrows { justify-content: flex-end !important; }
+
+  /* Mentoring: hide desktop label, show mobile row */
+  .r-course-label-top { display: none !important; }
+  .r-course-row       { display: flex !important; }
 }
 
 /* Hidden on desktop — shown only on mobile via media query above */
@@ -479,6 +486,10 @@ body {
   z-index: 1;
   pointer-events: none;
 }
+
+/* Desktop: show label above description, hide mobile row */
+.r-course-label-top { display: block; }
+.r-course-row       { display: none !important; }
 
 .r-mobile-course-badge {
   display: none;
