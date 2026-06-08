@@ -383,6 +383,7 @@ export const cases: Case[] = [
     ],
     navSections: [
       { id: "overview",    label: "Overview" },
+      { id: "problem",     label: "Problem" },
       { id: "discovery",   label: "Discovery" },
       { id: "paywall",     label: "Paywall" },
       { id: "funnel",      label: "Funnel" },

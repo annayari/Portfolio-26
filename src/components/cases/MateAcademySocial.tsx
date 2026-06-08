@@ -229,7 +229,7 @@ export function MateAcademySocial() {
       {/* ── PROBLEM ──────────────────────────────────────────────────────── */}
       <section id="problem" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 80 }}>
         <SectionLabel>Breakdown of the problem</SectionLabel>
-        <H2>The platform had great content — but zero social layer</H2>
+        <H2>The platform had great content but zero social layer</H2>
 
         <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '36px 48px', marginTop: 24 }}>
           {[

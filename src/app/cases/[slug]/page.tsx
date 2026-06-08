@@ -606,7 +606,7 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
   const navSections = c.navSections ?? defaultNavSections;
 
   return (
-    <div className="r-case-outer" style={{ maxWidth: 960, margin: '0 auto', padding: '24px 24px 64px 187px' }}>
+    <div className="r-case-outer" style={{ maxWidth: 1140, margin: '0 auto', padding: '24px 187px 64px 187px' }}>
       <CaseSideNav sections={navSections} />
 
       <div style={{ display: 'flex' }}>

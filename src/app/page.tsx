@@ -193,13 +193,12 @@ export default function Home() {
           </Link>
 
           {/* Case 3 — Mate academy mentor */}
-          <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
+          <Link href="/cases/mate-academy-mentor" className="case-hover-zone" style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}>
             <div style={{
               width: '100%', aspectRatio: '4/3', borderRadius: 12,
-              backgroundColor: T.surfaceOverlay, overflow: 'hidden', position: 'relative',
+              backgroundColor: T.surfaceOverlay, overflow: 'hidden',
             }}>
               <img src="/cases/mate-academy-mentor-cover.jpg" alt="Mate academy mentor review" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <span className="r-wip-pill"><Clock size={11} strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" />Currently building</span>
             </div>
             <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
@@ -213,7 +212,7 @@ export default function Home() {
             }}>
               Reducing the time for mentors to review home tasks by 25%
             </h3>
-          </div>
+          </Link>
 
         </div>
 
@@ -221,7 +220,7 @@ export default function Home() {
         <div className="r-grid-2 reveal reveal-d1" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
 
           {/* Case 4 — CasaVista */}
-          <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
+          <Link href="/cases/casavista-app" className="case-hover-zone" style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}>
             <div className="phone-bg" style={{
               width: '100%', aspectRatio: '4/3', borderRadius: 12,
               overflow: 'hidden',
@@ -243,7 +242,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <span className="r-wip-pill"><Clock size={11} strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" />Currently building</span>
             </div>
             <p className="r-case-company" style={{
               fontFamily: FONT_MONO, fontSize: 14, fontWeight: 500,
@@ -257,7 +255,7 @@ export default function Home() {
             }}>
               Increasing new user conversion to subscription by 30%
             </h3>
-          </div>
+          </Link>
 
           {/* Case 5 — Sipless */}
           <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
