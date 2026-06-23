@@ -220,12 +220,13 @@ export default function Home() {
         <div className="r-grid-2 reveal reveal-d1" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
 
           {/* Case 4 — CasaVista */}
-          <Link href="/cases/casavista-app" className="case-hover-zone" style={{ textDecoration: 'none', display: 'block', cursor: 'none' }}>
+          <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
             <div className="phone-bg" style={{
               width: '100%', aspectRatio: '4/3', borderRadius: 12,
               overflow: 'hidden',
               position: 'relative',
             }}>
+              <span className="r-wip-pill"><Clock size={11} strokeWidth={2} strokeLinecap="square" strokeLinejoin="miter" />Currently building</span>
               <div style={{
                 position: 'absolute',
                 top: '50%', left: '50%',
@@ -255,7 +256,7 @@ export default function Home() {
             }}>
               Increasing new user conversion to subscription by 30%
             </h3>
-          </Link>
+          </div>
 
           {/* Case 5 — Sipless */}
           <div className="case-hover-zone" data-cursor="wip" style={{ display: 'block', cursor: 'none' }}>
