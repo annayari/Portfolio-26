@@ -597,7 +597,7 @@ function StandardCase({ c }: { c: Case }) {
 
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (slug === 'casavista-app') redirect('/');
+  if (slug === 'casavista-app' && process.env.NODE_ENV === 'production') redirect('/');
   const idx = cases.findIndex(c => c.slug === slug);
   if (idx === -1) notFound();
 
