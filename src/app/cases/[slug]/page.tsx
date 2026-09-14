@@ -612,8 +612,8 @@ export default async function CasePage({ params }: { params: Promise<{ slug: str
       <div style={{ display: 'flex' }}>
 
         <div style={{ flex: 1, minWidth: 0, overflow: 'hidden', width: 0, display: 'flex', flexDirection: 'column', gap: 80 }}>
-          {c.slug === 'mate-academy' ? <MateAcademyGamification /> : c.slug === 'mate-academy-social' ? <MateAcademySocial /> : c.slug === 'mate-academy-mentor' ? <MateAcademyMentor /> : c.slug === 'casavista-app' ? <CasaVistaApp /> : c.solutions ? <MateAcademyCase c={c} /> : <StandardCase c={c} />}
-          {!['mate-academy', 'mate-academy-social', 'mate-academy-mentor', 'casavista-app'].includes(c.slug) && <Pagination prev={prev} next={next} />}
+          {c.slug === 'mate-academy' ? <MateAcademyGamification /> : c.slug === 'mate-academy-social' ? <MateAcademySocial /> : c.slug === 'mate-academy-mentor' ? <MateAcademyMentor /> : c.slug === 'renovio-app' ? <CasaVistaApp /> : c.solutions ? <MateAcademyCase c={c} /> : <StandardCase c={c} />}
+          {!['mate-academy', 'mate-academy-social', 'mate-academy-mentor', 'renovio-app'].includes(c.slug) && <Pagination prev={prev} next={next} />}
         </div>
 
       </div>

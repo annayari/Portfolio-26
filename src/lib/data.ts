@@ -334,7 +334,7 @@ export const cases: Case[] = [
     ],
   },
   {
-    slug: "casavista-app",
+    slug: "renovio-app",
     title: "Increasing new user conversion to subscription by 30%",
     company: "CasaVista",
     period: "Oct 2024 – Apr 2026",
