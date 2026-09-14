@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { cases, defaultNavSections, type Case } from "@/lib/data";
 import { Badge } from "@/components/ui/Badge";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
@@ -597,7 +597,6 @@ function StandardCase({ c }: { c: Case }) {
 
 export default async function CasePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (slug === 'casavista-app' && process.env.NODE_ENV === 'production') redirect('/');
   const idx = cases.findIndex(c => c.slug === slug);
   if (idx === -1) notFound();
 
