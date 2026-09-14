@@ -144,19 +144,17 @@ export function CasaVistaApp() {
         <div className="r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '65% 35%', gap: 48, marginBottom: 0, paddingBottom: 36, borderBottom: `1px solid ${BORDER}`, alignItems: 'start' }}>
           <div>
             <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.4, letterSpacing: '-0.01em', margin: '0 0 12px' }}>
-              Joined as the first and only designer and led the product from zero to launch:{' '}
-              <strong style={{ color: INK, fontWeight: 500 }}>brand, MVP, AI generation flow, design system, paywall, upsells, and acquisition funnels.</strong>
+              As the first and only Product Designer, I owned the end-to-end design process from defining the user journey to launching the product.
             </p>
             <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.4, letterSpacing: '-0.01em', margin: 0 }}>
-              The app helps users visualize room redesigns with AI — upload a photo, choose a style, get a result. My work focused on turning curiosity into subscription intent: helping users experience value before the ask, reducing trial distrust, and placing monetization at the right moment.
+              The AI-powered app transforms room photos into personalized designs. I focused on converting curiosity into subscription intent by creating value before the paywall and improving the monetization experience.
             </p>
           </div>
           <div className="r-meta-list" style={{ display: 'flex', flexDirection: 'column' as const, gap: 10 }}>
             {[
-              { label: 'Role',     value: 'Sole product designer' },
+              { label: 'Role',     value: 'Product designer' },
               { label: 'Platform', value: 'iOS + Web' },
               { label: 'Markets',  value: 'Tier 1' },
-              { label: 'Duration', value: '18 months' },
             ].map(row => (
               <div key={row.label} className="r-meta-item" style={{ display: 'grid', gridTemplateColumns: '72px 1fr', gap: 16, alignItems: 'baseline' }}>
                 <span style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', textAlign: 'right' as const }}>{row.label}</span>
@@ -167,7 +165,7 @@ export function CasaVistaApp() {
         </div>
 
         {/* key results */}
-        <div className="reveal" style={{ paddingTop: 48, marginBottom: 0 }}>
+        <div className="reveal" style={{ paddingTop: 48, marginBottom: 0, paddingBottom: 48, borderBottom: `1px solid ${BORDER}` }}>
           <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: '0 0 20px' }}>Key results</p>
           <div className="r-metrics-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0 24px', width: '100%' }}>
             {[
@@ -175,8 +173,8 @@ export function CasaVistaApp() {
               { value: '< 10%', label: 'Day-0 cancellations\n(was ~18%)', isStatic: true },
               { value: '14.8%', label: 'Web-to-app CR\n(was 8.2%)', isStatic: true },
               { value: '+34%',  raw: '+34', suffix: '%', label: 'Upsell conversion\nfrom inline tools' },
-            ].map((m) => (
-              <div key={m.value} style={{ paddingRight: 24, borderRight: `1px solid ${BORDER}`, paddingLeft: 0 }}>
+            ].map((m, i, arr) => (
+              <div key={m.value} style={{ paddingRight: 24, borderRight: i < arr.length - 1 ? `1px solid ${BORDER}` : 'none', paddingLeft: 0 }}>
                 {m.isStatic ? (
                   <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: 0, lineHeight: 1, letterSpacing: '-0.02em' }}>
                     {m.value}
@@ -195,7 +193,7 @@ export function CasaVistaApp() {
 
         {/* hero image */}
         <div className="img-hover-wrap" style={{ marginTop: 64, borderRadius: 16, overflow: 'hidden' }}>
-          <Placeholder aspect="16/7" label="Hero: before / after AI room generation" />
+          <img src="/cases/casavista-hero.png" alt="Hero: before / after AI room generation" style={{ width: '100%', display: 'block' }} />
         </div>
 
       </section>
@@ -204,16 +202,16 @@ export function CasaVistaApp() {
       <section id="problem" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
         <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Breakdown of the problem</p>
         <H2>Why users weren't ready to subscribe</H2>
-        <div className="r-grid-3-to-1" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px', marginTop: 32 }}>
+        <div className="r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px', marginTop: 32 }}>
           {[
-            { emoji: '🧪', title: 'No proof of quality', body: 'Most users dropped before completing their first AI generation — before they could see whether the product was worth paying for.' },
+            { emoji: '🧪', title: 'No proof of quality', body: 'Most users dropped before completing their first AI generation, before they could see whether the product was worth paying for.' },
             { emoji: '⏱️', title: 'Paywall appeared too early', body: 'Users were asked to subscribe before reaching the core value moment. Curiosity was there, but confidence wasn\'t built yet.' },
             { emoji: '🔐', title: 'Subscription anxiety', body: 'Bi-weekly support insights showed recurring concerns around trial terms, charges, reminders, and cancellation.' },
             { emoji: '📉', title: 'Day-0 cancellation spike', body: 'Day-0 subscription cancellations reached ~18%, showing that users started trials with low trust and cancelled immediately after.' },
           ].map((item, i) => (
             <div key={i}>
               <p style={{ fontFamily: FD, fontSize: 20, margin: '0 0 6px', lineHeight: 1 }}>{item.emoji} <strong style={{ color: INK, fontWeight: 500, fontSize: 17 }}>{item.title}</strong></p>
-              <Body style={{ fontSize: 15, lineHeight: 1.6 }}>{item.body}</Body>
+              <Body style={{ fontSize: 16, lineHeight: 1.6 }}>{item.body}</Body>
             </div>
           ))}
         </div>
@@ -222,26 +220,68 @@ export function CasaVistaApp() {
 
       {/* ── DISCOVERY ────────────────────────────────────────────────────── */}
       <section id="discovery" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <H2>Discovery: users churned from distrust, not dissatisfaction</H2>
+        <H2>Discovery</H2>
         <Body style={{ marginBottom: 24, lineHeight: 1.5 }}>
           Combined funnel analytics, cancellation timing data, bi-weekly support reviews, in-app surveys, and a{' '}
-          <strong style={{ fontWeight: 500, color: INK }}>competitor audit across 6 AI apps</strong>{' '}
-          — mapping paywall timing, pricing, trial mechanics, and upsell placement.
+          <strong style={{ fontWeight: 500, color: INK }}>competitor audit across AI apps</strong>{' '}
+          mapping paywall timing, pricing, trial mechanics, and upsell placement.
         </Body>
 
-        <div style={{ borderLeft: `2px solid ${BORDER}`, paddingLeft: 16, marginTop: 32 }}>
-          <p style={{ fontFamily: FD, fontSize: 15, color: BODY, lineHeight: 1.6, margin: 0 }}>
-            <strong style={{ color: INK, fontWeight: 500 }}>Key insight:</strong> the product asked for commitment before users had enough confidence in the output or clarity around terms. The paywall needed to appear later, explain more, and feel safer.
-          </p>
+        <div className="img-hover-wrap" style={{ marginTop: 32, borderRadius: 12, overflow: 'hidden' }}>
+          <img src="/cases/casavista-competitor-audit.jpg" alt="Competitor audit matrix: paywall timing, pricing, trial mechanics across AI apps" style={{ width: '100%', display: 'block' }} />
         </div>
 
-        <div className="img-hover-wrap" style={{ marginTop: 32, borderRadius: 12, overflow: 'hidden' }}>
-          <Placeholder aspect="16/6" label="Competitor audit matrix: paywall timing, pricing, trial mechanics across 6 AI apps" />
+        <div style={{ marginTop: 88 }}>
+          <div className="r-grid-asym r-case-iteration" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, alignItems: 'start' }}>
+            <div className="img-hover-wrap" style={{ borderRadius: 12, overflow: 'hidden' }}>
+              <img src="/cases/casavista-user-interviews.jpg" alt="User interviews" style={{ width: '100%', display: 'block' }} />
+            </div>
+            <div>
+              <p style={{ fontFamily: FD, fontSize: 20, fontWeight: 500, color: INK, lineHeight: 1.3, margin: '0 0 4px' }}>User Interviews</p>
+              <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.6, margin: '0 0 16px' }}>
+                To understand <strong style={{ color: INK, fontWeight: 500 }}>user expectations and conversion barriers</strong>, I interviewed users exploring AI room redesign for the first time.
+              </p>
+              <p style={{ fontFamily: FD, fontSize: 16, color: BODY, lineHeight: 1.6, margin: 0 }}>
+                The goal was to identify what prevented users from <strong style={{ color: INK, fontWeight: 500 }}>subscribing</strong>, what created <strong style={{ color: INK, fontWeight: 500 }}>trust in AI-generated results</strong>, and which moments delivered enough value to move users from <strong style={{ color: INK, fontWeight: 500 }}>curiosity to commitment</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── IDEATION & CONCEPTUALIZATION ────────────────────────────────── */}
+      <section id="ideation" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
+        <H2>Ideation & Conceptualization</H2>
+        <Body style={{ marginBottom: 40, lineHeight: 1.6 }}>
+          Working closely with product, analytics, marketing, and support teams, I identified user pain points, conversion barriers, and opportunities to improve the AI redesign experience.
+        </Body>
+        <div className="r-grid-asym" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+          {[
+            { title: 'User insights', body: 'Analyzed support feedback, user behavior, and funnel data to understand trust gaps and what prevented users from reaching the value moment.' },
+            { title: 'MVP scope', body: 'Prioritized key experiences across AI generation, editing, and monetization to help users move from curiosity to subscription intent.' },
+          ].map((item, i) => (
+            <div key={i}>
+              <p style={{ fontFamily: FD, fontSize: 17, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1.3 }}>{item.title}</p>
+              <Body style={{ fontSize: 16, lineHeight: 1.6 }}>{item.body}</Body>
+            </div>
+          ))}
+        </div>
+
+        <div className="img-hover-wrap" style={{ marginTop: 40, borderRadius: 16, overflow: 'hidden' }}>
+          <img src="/cases/casavista-mvp-scope.png" alt="MVP scope: AI generation flow, personalization editing tools, free generation limits before upgrade, first-time user journey, discovery & inspiration, design system" style={{ width: '100%', display: 'block' }} />
         </div>
       </section>
 
       {/* ── WORK SCREENS ─────────────────────────────────────────────────── */}
       <section id="work" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
+        <H2>Cutting time to first generation by 73%</H2>
+        <Body style={{ marginBottom: 16, lineHeight: 1.6 }}>
+          I transformed a fragmented AI product into a cohesive ecosystem by creating a scalable design system across generation, editing, onboarding, and monetization.
+        </Body>
+        <Body style={{ marginBottom: 40, lineHeight: 1.6 }}>
+          By introducing guided creation flows and a consistent visual language, I helped users reach value faster while improving clarity, trust, and overall product quality.
+        </Body>
+
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 24 }}>
           {[
             '/cases/vista-work-1.jpg',
@@ -255,240 +295,132 @@ export function CasaVistaApp() {
             </div>
           ))}
         </div>
+
+        <div className="reveal" style={{ marginTop: 48 }}>
+          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Result</p>
+          <div className="r-grid-3-to-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+            {[
+              { n: '1.2 min', label: 'Time to first generation\n(from 4.5 min)' },
+              { n: '+55%', label: 'New user activation' },
+              { n: '3×', label: 'Higher subscription intent\nafter first edit' },
+            ].map((m) => (
+              <div key={m.n}>
+                <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
+                <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── FEATURE 01 — PAYWALL ─────────────────────────────────────────── */}
       <section id="paywall" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <SectionLabel>A/B testing</SectionLabel>
-        <H2>Paywall experiments to turn visitors into subscribers</H2>
-        <Body style={{ marginBottom: 48, lineHeight: 1.6 }}>
-          Three experiments, one principle: the ask only works{' '}
-          <strong style={{ color: INK, fontWeight: 500 }}>after conviction is built</strong>.
-          Timing, framing, and transparency each moved the needle independently.
-        </Body>
+        <H2>A/B test results</H2>
 
         {[
           {
-            tag: 'Experiment 01 — Paywall redesign',
-            title: 'Clearer value, stronger hierarchy, less decision friction',
-            result: '+30% paywall conversion',
-            body: 'Previous paywall created friction — users didn\'t have enough confidence in the product or clarity on terms. Redesigned around clearer value communication, stronger hierarchy, and reduced decision friction.',
+            title: 'Paywall built around the tool you tapped',
+            body: 'I tested a contextual paywall triggered immediately after a user selected an editing tool, making the offer directly relevant to the task they were trying to complete. This replaced a generic paywall with a more timely upgrade moment.',
+            imgA: '/cases/casavista-paywall-exp1-a.jpg',
+            imgB: '/cases/casavista-paywall-exp1-b.jpg',
+            results: [
+              { n: '+34%', label: 'Upsell conversion from\ntool-level offers' },
+              { n: '41%',  label: 'New subscriptions starting\nfrom a tool-level paywall' },
+            ],
           },
           {
-            tag: 'Experiment 02 — Trial transparency',
-            title: 'Show the timeline: Today → Day 5 reminder → Day 7 charge',
-            result: 'Day-0 cancellations < 10% (from ~18%)',
-            body: 'Support showed recurring anxiety: when will I be charged? Can I cancel? Added a step-by-step timeline and cancellation info directly on the paywall. Users who feel safe actually try the product.',
+            title: 'Trial timeline printed on the paywall',
+            body: 'Tested showing the full 7-day trial timeline directly on the paywall, including the reminder and charge date, instead of leaving key terms in the fine print. The goal was to reduce uncertainty, build trust, and make starting the trial feel safer.',
+            imgA: '/cases/casavista-paywall-exp2-a.jpg',
+            imgB: '/cases/casavista-paywall-exp2-b.jpg',
+            results: [
+              { n: '< 10%', label: 'Day-0 cancellations\n(from 18%)' },
+              { n: '+8%',   label: 'Trial-to-paid conversion' },
+              { n: '-23%',  label: 'Billing & cancellation tickets' },
+            ],
           },
           {
-            tag: 'Experiment 03 — Annual plan as default',
-            title: 'Annual plan first, monthly behind "View all plans"',
-            result: '+22% annual subscriptions',
-            body: 'Annual plan as the primary option, monthly behind one tap. When the first price users see is the annual per-month rate, monthly feels expensive by comparison.',
+            title: 'Free generations counted per tool',
+            body: 'A static Limit 5 badge stated a rule but never said where the user stood, so running out felt like a sudden restriction. I counted generations per tool and kept the spent tools on screen in a locked state, because visible loss converts better than a clean menu.',
+            imgA: '/cases/casavista-paywall-exp3-a.jpg',
+            imgB: '/cases/casavista-paywall-exp3-b.jpg',
+            results: [
+              { n: '7.5%', label: 'Conversion from\nusage limit screen' },
+              { n: '19%',  label: 'Users reaching\n5th generation' },
+              { n: '3.4',  label: 'Average generations\nper new user' },
+            ],
           },
         ].map((it, i) => (
-          <div key={i} style={{ marginTop: i === 0 ? 0 : 64 }}>
-            <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>{it.tag}</p>
-            <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 20px' }}>{it.title}</h3>
-            <div style={{ backgroundColor: OVR, borderRadius: 16, padding: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
-              <div style={{ position: 'relative' as const }}>
-                <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
-                <div style={{ position: 'absolute' as const, top: 10, left: 10, width: 28, height: 28, borderRadius: '50%', backgroundColor: '#E8E8E4', border: `1px solid ${BORDER}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontFamily: FD, fontSize: 12, fontWeight: 600, color: '#6B6B7A' }}>A</span>
-                </div>
+          <div key={i} className="reveal" style={{ marginTop: i === 0 ? 40 : 64, paddingTop: i === 0 ? 0 : 40, borderTop: i === 0 ? 'none' : `1px solid ${BORDER}` }}>
+            <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>{it.title}</h3>
+            <Body style={{ fontSize: 16, lineHeight: 1.6, marginBottom: 24 }}>{it.body}</Body>
+            <div style={{ display: 'flex', gap: 4, marginBottom: 24, alignItems: 'stretch' }}>
+              <div style={{ backgroundColor: (it as any).imgA ? 'transparent' : OVR, borderRadius: 16, padding: (it as any).imgA ? 0 : 20, position: 'relative' as const, flex: (it as any).imgA ? '0 1 auto' : '1 1 0' }}>
+                {!(it as any).imgA && (
+                  <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundColor: '#E8E8E4', border: `1px solid ${BORDER}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <span style={{ fontFamily: FD, fontSize: 14, fontWeight: 600, color: '#6B6B7A' }}>A</span>
+                  </div>
+                )}
+                {(it as any).imgA ? (
+                  <img src={(it as any).imgA} alt={`${it.title} — variant A`} style={{ height: 'clamp(180px, 55vw, 420px)', maxWidth: '100%', width: 'auto', borderRadius: 10, display: 'block', objectFit: 'contain' as const }} />
+                ) : (
+                  <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
+                )}
               </div>
-              <div style={{ position: 'relative' as const }}>
-                <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
-                <div style={{ position: 'absolute' as const, top: 10, left: 10, width: 28, height: 28, borderRadius: '50%', backgroundColor: INK, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontFamily: FD, fontSize: 12, fontWeight: 600, color: OVR }}>B</span>
-                </div>
+              <div style={{ backgroundColor: (it as any).imgB ? 'transparent' : OVR, borderRadius: 16, padding: (it as any).imgB ? 0 : 20, position: 'relative' as const, flex: (it as any).imgB ? '0 1 auto' : '1 1 0' }}>
+                {!(it as any).imgB && (
+                  <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundColor: INK, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                    <span style={{ fontFamily: FD, fontSize: 14, fontWeight: 600, color: OVR }}>B</span>
+                  </div>
+                )}
+                {(it as any).imgB ? (
+                  <img src={(it as any).imgB} alt={`${it.title} — variant B`} style={{ height: 'clamp(180px, 55vw, 420px)', maxWidth: '100%', width: 'auto', borderRadius: 10, display: 'block', objectFit: 'contain' as const }} />
+                ) : (
+                  <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
+                )}
               </div>
             </div>
-            <Body style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 12 }}>{it.body}</Body>
-            <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: 0 }}>{it.result}</p>
+            <div>
+              <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Result</p>
+              <div className="r-grid-3-to-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+                {it.results.map((m) => (
+                  <div key={m.n}>
+                    <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
+                    <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
-
-        {/* Result */}
-        <div className="reveal" style={{ marginTop: 64 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Result</p>
-          <div className="r-grid-3-to-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
-            {[
-              { n: '+30%',  label: 'Paywall conversion\nuplift' },
-              { n: '< 10%', label: 'Day-0 cancellations\n(was ~18%)' },
-              { n: '+22%',  label: 'Annual subscriptions\nfrom plan ordering' },
-            ].map((m) => (
-              <div key={m.n}>
-                <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
-                <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FEATURE 02 — ACQUISITION FUNNEL ──────────────────────────────── */}
-      <section id="funnel" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <SectionLabel>A/B testing</SectionLabel>
-        <H2>Acquisition experiment to bring in higher-intent users</H2>
-        <Body style={{ marginBottom: 48, lineHeight: 1.6 }}>
-          One taste creates desire. A hard gate filters for intent.{' '}
-          <strong style={{ color: INK, fontWeight: 500 }}>Higher-quality installs, not just more installs.</strong>
-        </Body>
-
-        <div>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Experiment 04 — Web-to-app hard gate</p>
-          <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 20px' }}>One taste on web, then hard-gate to app</h3>
-          <div style={{ backgroundColor: OVR, borderRadius: 16, padding: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
-            <div style={{ position: 'relative' as const }}>
-              <div style={{ width: '100%', aspectRatio: '16/9', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
-              <div style={{ position: 'absolute' as const, top: 10, left: 10, width: 28, height: 28, borderRadius: '50%', backgroundColor: '#E8E8E4', border: `1px solid ${BORDER}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: FD, fontSize: 12, fontWeight: 600, color: '#6B6B7A' }}>A</span>
-              </div>
-            </div>
-            <div style={{ position: 'relative' as const }}>
-              <div style={{ width: '100%', aspectRatio: '16/9', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
-              <div style={{ position: 'absolute' as const, top: 10, left: 10, width: 28, height: 28, borderRadius: '50%', backgroundColor: INK, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: FD, fontSize: 12, fontWeight: 600, color: OVR }}>B</span>
-              </div>
-            </div>
-          </div>
-          <Body style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 12 }}>
-            Tested four concepts: direct link, quiz, multiple free gens + soft gate, one gen + hard gate. Winner: one taste on web creates desire, hard gate filters for intent.
-          </Body>
-          <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: 0 }}>CR 8.2% → 14.8%</p>
-        </div>
-
-        {/* Result */}
-        <div className="reveal" style={{ marginTop: 64 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Result</p>
-          <div style={{ display: 'flex', gap: 48 }}>
-            {[
-              { n: '14.8%', label: 'Web-to-app install CR\n(was 8.2%)' },
-            ].map((m) => (
-              <div key={m.n}>
-                <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
-                <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FEATURE 03 — ENGAGEMENT ──────────────────────────────────────── */}
-      <section id="engagement" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <SectionLabel>A/B testing</SectionLabel>
-        <H2>Upsell experiment to monetize at the right moment</H2>
-        <Body style={{ marginBottom: 48, lineHeight: 1.6 }}>
-          Users are most receptive the moment they see their room transformed.{' '}
-          <strong style={{ color: INK, fontWeight: 500 }}>Burying tools requires them to remember and seek — surfacing them requires nothing.</strong>
-        </Body>
-
-        <div>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 4px' }}>Experiment 05 — Upsell placement</p>
-          <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 20px' }}>Surface editing tools inline, not buried in settings</h3>
-          <div style={{ backgroundColor: OVR, borderRadius: 16, padding: 16, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
-            <div style={{ position: 'relative' as const }}>
-              <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
-              <div style={{ position: 'absolute' as const, top: 10, left: 10, width: 28, height: 28, borderRadius: '50%', backgroundColor: '#E8E8E4', border: `1px solid ${BORDER}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: FD, fontSize: 12, fontWeight: 600, color: '#6B6B7A' }}>A</span>
-              </div>
-            </div>
-            <div style={{ position: 'relative' as const }}>
-              <div style={{ width: '100%', aspectRatio: '3/4', borderRadius: 10, backgroundColor: '#E4E4E0' }} />
-              <div style={{ position: 'absolute' as const, top: 10, left: 10, width: 28, height: 28, borderRadius: '50%', backgroundColor: INK, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: FD, fontSize: 12, fontWeight: 600, color: OVR }}>B</span>
-              </div>
-            </div>
-          </div>
-          <Body style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 12 }}>
-            Editing tools (floor, walls, furniture) moved from settings menu to inline after generation. Only 8% of users found them in settings — despite users who found them converting to paid at 2.3× baseline.
-          </Body>
-          <p style={{ fontFamily: FD, fontSize: 15, fontWeight: 500, color: INK, margin: 0 }}>+34% upsell conversion</p>
-        </div>
-
-        {/* Next steps */}
-        <div style={{ marginTop: 64 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 16px' }}>Next steps</p>
-          <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12 }}>
-            {[
-              'Test personalized style suggestions based on first generation to increase second-session return',
-              'Add social sharing of before/after results as organic acquisition loop',
-              'Explore AI-powered room matching — "Users who redesigned this also tried…"',
-            ].map((text, i) => (
-              <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundColor: '#EBEBEB', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <ArrowUp size={14} color={INK} />
-                </div>
-                <p style={{ fontFamily: FD, fontSize: 15, color: BODY, margin: 0, lineHeight: 1.5, paddingTop: 6 }}>{text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Result */}
-        <div className="reveal" style={{ marginTop: 64 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>Result</p>
-          <div style={{ display: 'flex', gap: 48 }}>
-            {[
-              { n: '+34%', label: 'Upsell conversion from\ninline tool placement' },
-            ].map((m) => (
-              <div key={m.n}>
-                <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
-                <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ── DESIGN SYSTEM ────────────────────────────────────────────────── */}
       <section id="system" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
-        <SectionLabel>Design system</SectionLabel>
-        <H2>Token-based system: new app variant ships in hours</H2>
+        <SectionLabel>Implementation</SectionLabel>
+        <H2>What was challenging?</H2>
+        <Body style={{ marginBottom: 16, lineHeight: 1.6 }}>
+          My mission was to transform AI curiosity into subscription intent by designing an experience that built value, trust, and conversion at the right moments.
+        </Body>
         <Body style={{ marginBottom: 32, lineHeight: 1.6 }}>
-          Built a token-based design system for iOS and web.{' '}
-          <strong style={{ color: INK, fontWeight: 500 }}>Reskin entire flows by swapping tokens, not rebuilding screens.</strong>{' '}
-          Multiple app variants for different audiences and ASO targets — same features, different UI and branding.
+          To scale the product efficiently, I built a strong design foundation by creating a design system, defining reusable components and patterns, and leveraging AI-assisted workflows to accelerate documentation and iteration. This enabled faster experimentation, consistent experiences across iOS and Web, and closer collaboration between design and engineering.
         </Body>
 
-        <div className="img-hover-wrap" style={{ borderRadius: 12, overflow: 'hidden' }}>
-          <Placeholder aspect="16/7" label="Design system: tokens, components, app variants" />
-        </div>
-
-        <div className="reveal" style={{ marginTop: 64 }}>
-          <p style={{ fontFamily: FD, fontSize: 14, fontWeight: 400, color: '#6B6B7A', margin: '0 0 12px' }}>What I built</p>
-          <div className="r-grid-3-to-1" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
-            {[
-              { n: '15+', label: 'A/B experiments\nover 18 months' },
-              { n: '~30%', label: 'Faster production\nworkflow' },
-              { n: '1',   label: 'Designer — end-to-end\nownership' },
-            ].map((m) => (
-              <div key={m.n}>
-                <p style={{ fontFamily: FD, fontSize: 40, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1, letterSpacing: '-0.02em' }}>{m.n}</p>
-                <p style={{ fontFamily: FD, fontSize: 14, color: '#6B6B7A', margin: 0, lineHeight: 1.4, whiteSpace: 'pre-line' as const }}>{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ── LEARNINGS ────────────────────────────────────────────────────── */}
       <section id="learnings" className="reveal" style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 64 }}>
         <H2>Learnings</H2>
-        <p style={{ fontFamily: FD, fontSize: 18, color: '#6B6B7A', margin: '4px 0 28px', lineHeight: 1.4 }}>
-          18 months of sequenced bets — no big launch, disciplined experimentation
-        </p>
-        <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px' }}>
+        <div className="r-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px 48px', marginTop: 28 }}>
           {[
             { title: 'Timing beats persuasion',     body: 'The strongest conversion gains came from placing the paywall after proof of value. Before conviction exists, even the best copy fails.' },
             { title: 'Trust is a conversion lever', body: 'Clear trial terms cut day-0 cancellations in half. Users who feel safe start trials with intent to use them.' },
             { title: 'Copy changes behavior',       body: 'A single CTA swap outperformed every visual redesign. In high-intent flows, language shapes decisions directly.' },
-            { title: 'Growth design is sequencing', body: 'Value → trust → conversion. The order of the experience matters more than any individual screen.' },
+            { title: 'Growth design is sequencing', body: 'Value, then trust, then conversion. The order of the experience matters more than any individual screen.' },
           ].map((l, i) => (
             <div key={i}>
               <p style={{ fontFamily: FD, fontSize: 17, fontWeight: 500, color: INK, margin: '0 0 6px', lineHeight: 1.3 }}>{l.title}</p>
-              <Body style={{ fontSize: 15 }}>{l.body}</Body>
+              <Body style={{ fontSize: 16 }}>{l.body}</Body>
             </div>
           ))}
         </div>

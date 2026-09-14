@@ -386,8 +386,6 @@ export const cases: Case[] = [
       { id: "problem",     label: "Problem" },
       { id: "discovery",   label: "Discovery" },
       { id: "paywall",     label: "Paywall" },
-      { id: "funnel",      label: "Funnel" },
-      { id: "engagement",  label: "Engagement" },
       { id: "system",      label: "Design system" },
       { id: "learnings",   label: "Learnings" },
     ],
