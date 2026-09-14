@@ -364,11 +364,12 @@ export default function Home() {
               href={a.hasPage ? `/articles/${a.slug}` : (a.externalUrl ?? '#')}
               target={a.hasPage ? undefined : '_blank'}
               rel={a.hasPage ? undefined : 'noopener noreferrer'}
-              className="r-article-row"
+              className="r-article-row case-hover-zone"
+              data-cursor="article"
               style={{
                 display: 'flex', alignItems: 'baseline',
                 justifyContent: 'space-between', gap: 48,
-                padding: '10px 0', textDecoration: 'none',
+                padding: '10px 0', textDecoration: 'none', cursor: 'none',
               }}
             >
               <span style={{ fontFamily: FONT_BODY, fontSize: 16, fontWeight: 500, color: 'rgba(11,13,17,0.8)', lineHeight: 1.5, letterSpacing: '-0.01em' }}>

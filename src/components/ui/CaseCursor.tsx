@@ -25,20 +25,27 @@ export function CaseCursor() {
     const iconCourse = iconCourseRef.current;
     if (!wrap || !content || !text || !iconEye || !iconWip || !iconCourse) return;
 
-    type ZoneType = 'view' | 'wip' | 'course';
+    type ZoneType = 'view' | 'wip' | 'course' | 'article';
+
+    const currentType = (): ZoneType => {
+      if (isWipZone.current) return 'wip';
+      if (iconCourse.style.display === 'flex') return 'course';
+      if (text.textContent === 'Read article') return 'article';
+      return 'view';
+    };
 
     const updateLabel = (type: ZoneType) => {
-      const prev = isWipZone.current ? 'wip' : (iconCourse.style.display === 'flex' ? 'course' : 'view');
+      const prev = currentType();
       if (type === prev) return;
       isWipZone.current         = type === 'wip';
-      text.textContent          = type === 'wip' ? 'Currently building' : type === 'course' ? 'View course' : 'View case study';
-      iconEye.style.display    = type === 'view'   ? 'flex' : 'none';
+      text.textContent          = type === 'wip' ? 'Currently building' : type === 'course' ? 'View course' : type === 'article' ? 'Read article' : 'View case study';
+      iconEye.style.display    = (type === 'view' || type === 'article') ? 'flex' : 'none';
       iconWip.style.display    = type === 'wip'    ? 'flex' : 'none';
       iconCourse.style.display = type === 'course' ? 'flex' : 'none';
       wrap.style.backgroundColor = type === 'wip' ? '#FFFFFF' : '#D8D2FF';
     };
 
-    const setZone = (nowInZone: boolean, isWip: boolean, isCourse: boolean) => {
+    const setZone = (nowInZone: boolean, isWip: boolean, isCourse: boolean, isArticle: boolean) => {
       if (nowInZone !== inZone.current) {
         inZone.current = nowInZone;
         if (nowInZone) {
@@ -57,7 +64,7 @@ export function CaseCursor() {
           content.style.transform    = 'scale(0.7)';
         }
       }
-      if (nowInZone) updateLabel(isWip ? 'wip' : isCourse ? 'course' : 'view');
+      if (nowInZone) updateLabel(isWip ? 'wip' : isCourse ? 'course' : isArticle ? 'article' : 'view');
     };
 
     const onMove = (e: MouseEvent) => {
@@ -65,7 +72,7 @@ export function CaseCursor() {
       if (!entered.current) { entered.current = true; wrap.style.opacity = '1'; }
       const el   = document.elementFromPoint(e.clientX, e.clientY);
       const zone = el?.closest('.case-hover-zone') as HTMLElement | null;
-      setZone(!!zone, zone?.dataset.cursor === 'wip', zone?.dataset.cursor === 'course');
+      setZone(!!zone, zone?.dataset.cursor === 'wip', zone?.dataset.cursor === 'course', zone?.dataset.cursor === 'article');
     };
 
     const onLeave = () => { wrap.style.opacity = '0'; entered.current = false; };
