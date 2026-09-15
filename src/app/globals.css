@@ -412,6 +412,10 @@ body {
   /* Articles row: stack title + date vertically, hide date */
   .r-article-row  { flex-direction: column !important; align-items: flex-start !important; gap: 4px !important; }
 
+  /* A/B comparison images: stack vertically on mobile */
+  .r-ab-row { flex-direction: column !important; }
+  .r-ab-row img { height: auto !important; width: 100% !important; max-width: 100% !important; }
+
   /* Nav items: tighter horizontal padding */
   .r-nav-item { padding-left: 10px !important; padding-right: 10px !important; }
 

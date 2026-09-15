@@ -354,7 +354,7 @@ export function CasaVistaApp() {
           <div key={i} className="reveal" style={{ marginTop: i === 0 ? 40 : 64, paddingTop: i === 0 ? 0 : 40, borderTop: i === 0 ? 'none' : `1px solid ${BORDER}` }}>
             <h3 style={{ fontFamily: FD, fontSize: 22, fontWeight: 500, color: INK, lineHeight: 1.3, letterSpacing: '-0.01em', margin: '0 0 12px' }}>{it.title}</h3>
             <Body style={{ fontSize: 16, lineHeight: 1.6, marginBottom: 24 }}>{it.body}</Body>
-            <div style={{ display: 'flex', gap: 4, marginBottom: 24, alignItems: 'stretch' }}>
+            <div className="r-ab-row" style={{ display: 'flex', gap: 4, marginBottom: 24, alignItems: 'stretch' }}>
               <div style={{ backgroundColor: (it as any).imgA ? 'transparent' : OVR, borderRadius: 16, padding: (it as any).imgA ? 0 : 20, position: 'relative' as const, flex: (it as any).imgA ? '0 1 auto' : '1 1 0' }}>
                 {!(it as any).imgA && (
                   <div style={{ width: 32, height: 32, borderRadius: '50%', backgroundColor: '#E8E8E4', border: `1px solid ${BORDER}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
